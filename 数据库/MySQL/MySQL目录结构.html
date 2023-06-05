@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL8的主要目录结构 | Sugar</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="Sugar">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.becc5145.js" as="script"><link rel="preload" href="/assets/js/2.8a031f56.js" as="script"><link rel="preload" href="/assets/js/43.229a5a6e.js" as="script"><link rel="prefetch" href="/assets/js/10.52cab887.js"><link rel="prefetch" href="/assets/js/11.abfb551c.js"><link rel="prefetch" href="/assets/js/12.d46d8e6b.js"><link rel="prefetch" href="/assets/js/13.796cc617.js"><link rel="prefetch" href="/assets/js/14.abb8dcc2.js"><link rel="prefetch" href="/assets/js/15.bc632091.js"><link rel="prefetch" href="/assets/js/16.3e74429b.js"><link rel="prefetch" href="/assets/js/17.928891a5.js"><link rel="prefetch" href="/assets/js/18.2853db4c.js"><link rel="prefetch" href="/assets/js/19.e814de36.js"><link rel="prefetch" href="/assets/js/20.7ea2bb80.js"><link rel="prefetch" href="/assets/js/21.b9a970c5.js"><link rel="prefetch" href="/assets/js/22.8f0aad5d.js"><link rel="prefetch" href="/assets/js/23.37938e1b.js"><link rel="prefetch" href="/assets/js/24.0c1837d6.js"><link rel="prefetch" href="/assets/js/25.daa710f8.js"><link rel="prefetch" href="/assets/js/26.4741f167.js"><link rel="prefetch" href="/assets/js/27.2c3cd4f9.js"><link rel="prefetch" href="/assets/js/28.e7126f3b.js"><link rel="prefetch" href="/assets/js/29.69e495da.js"><link rel="prefetch" href="/assets/js/3.c07a09ea.js"><link rel="prefetch" href="/assets/js/30.60fd56a9.js"><link rel="prefetch" href="/assets/js/31.43a01ec1.js"><link rel="prefetch" href="/assets/js/32.3d0a5c7b.js"><link rel="prefetch" href="/assets/js/33.8bb206bd.js"><link rel="prefetch" href="/assets/js/34.7e634c3d.js"><link rel="prefetch" href="/assets/js/35.bebcaa97.js"><link rel="prefetch" href="/assets/js/36.ed4dd0bb.js"><link rel="prefetch" href="/assets/js/37.2999990f.js"><link rel="prefetch" href="/assets/js/38.3684e1b0.js"><link rel="prefetch" href="/assets/js/39.83466aa5.js"><link rel="prefetch" href="/assets/js/4.eb479c1a.js"><link rel="prefetch" href="/assets/js/40.e75a081b.js"><link rel="prefetch" href="/assets/js/41.650d4fe5.js"><link rel="prefetch" href="/assets/js/42.b36d86a2.js"><link rel="prefetch" href="/assets/js/44.ded3279b.js"><link rel="prefetch" href="/assets/js/45.678478c0.js"><link rel="prefetch" href="/assets/js/46.33d79b2c.js"><link rel="prefetch" href="/assets/js/47.3c3fcf46.js"><link rel="prefetch" href="/assets/js/48.12df0a19.js"><link rel="prefetch" href="/assets/js/49.23fe9ddf.js"><link rel="prefetch" href="/assets/js/5.9462a6c1.js"><link rel="prefetch" href="/assets/js/50.1bf8997f.js"><link rel="prefetch" href="/assets/js/51.fd43798a.js"><link rel="prefetch" href="/assets/js/52.7f70dc4d.js"><link rel="prefetch" href="/assets/js/53.12136482.js"><link rel="prefetch" href="/assets/js/54.26249ffe.js"><link rel="prefetch" href="/assets/js/55.0a263515.js"><link rel="prefetch" href="/assets/js/56.4f05f519.js"><link rel="prefetch" href="/assets/js/57.52324724.js"><link rel="prefetch" href="/assets/js/58.5cb03987.js"><link rel="prefetch" href="/assets/js/59.41810f80.js"><link rel="prefetch" href="/assets/js/6.678bf046.js"><link rel="prefetch" href="/assets/js/60.0d67b809.js"><link rel="prefetch" href="/assets/js/61.7ceea6d8.js"><link rel="prefetch" href="/assets/js/62.87e71c61.js"><link rel="prefetch" href="/assets/js/63.fc9c302c.js"><link rel="prefetch" href="/assets/js/64.ca3808c3.js"><link rel="prefetch" href="/assets/js/65.e25f12cf.js"><link rel="prefetch" href="/assets/js/66.2ca8d64a.js"><link rel="prefetch" href="/assets/js/67.b7cdda32.js"><link rel="prefetch" href="/assets/js/68.f27a4837.js"><link rel="prefetch" href="/assets/js/69.8e3c9b33.js"><link rel="prefetch" href="/assets/js/7.929c4487.js"><link rel="prefetch" href="/assets/js/70.8f80e583.js"><link rel="prefetch" href="/assets/js/71.aaef6aba.js"><link rel="prefetch" href="/assets/js/72.45f1df49.js"><link rel="prefetch" href="/assets/js/8.06c0e874.js"><link rel="prefetch" href="/assets/js/9.e420af56.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sugar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  RabbitMQ
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/" class="nav-link">
+  Linux
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/.html" class="nav-link">
+  RabbitMQ
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/" class="nav-link">
+  Linux
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>MySQL</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/数据库/MySQL/MySQL目录结构.html" class="active sidebar-link">MySQL目录结构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#mysql8的主要目录结构" class="sidebar-link">MySQL8的主要目录结构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#数据库文件存放目录" class="sidebar-link">数据库文件存放目录</a></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#数据库命令存放目录" class="sidebar-link">数据库命令存放目录</a></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#配置文件目录" class="sidebar-link">配置文件目录</a></li></ul></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#数据库和文件系统的关系" class="sidebar-link">数据库和文件系统的关系</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#查看默认数据库" class="sidebar-link">查看默认数据库</a></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#数据库在文件系统中的表示" class="sidebar-link">数据库在文件系统中的表示</a></li></ul></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#表在文件系统中的表示" class="sidebar-link">表在文件系统中的表示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#innodb存储引擎模式" class="sidebar-link">InnoDB存储引擎模式</a></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#myisam存储引擎模式" class="sidebar-link">MyISAM存储引擎模式</a></li></ul></li><li class="sidebar-sub-header"><a href="/数据库/MySQL/MySQL目录结构.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/数据库/MySQL/用户与权限管理.html" class="sidebar-link">用户与权限管理</a></li><li><a href="/数据库/MySQL/逻辑架构.html" class="sidebar-link">逻辑架构</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="mysql8的主要目录结构"><a href="#mysql8的主要目录结构" class="header-anchor">#</a> MySQL8的主要目录结构</h2> <h3 id="数据库文件存放目录"><a href="#数据库文件存放目录" class="header-anchor">#</a> 数据库文件存放目录</h3> <div class="language-SQL extra-class"><pre class="language-sql"><code>mysql<span class="token operator">&gt;</span> <span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'datadir'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">---------------+------------------------+</span>
+<span class="token operator">|</span> Variable_name <span class="token operator">|</span> <span class="token keyword">Value</span>                  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+------------------------+</span>
+<span class="token operator">|</span> datadir       <span class="token operator">|</span> <span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span>mysql13308<span class="token operator">/</span><span class="token keyword">data</span><span class="token operator">/</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------+------------------------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.02</span> sec<span class="token punctuation">)</span>
+
+mysql<span class="token operator">&gt;</span> 
+</code></pre></div><p>进入<code>/data/mysql13308/data/</code>目录，如下展现的就是数据库文件</p> <h3 id="数据库命令存放目录"><a href="#数据库命令存放目录" class="header-anchor">#</a> 数据库命令存放目录</h3> <p>数据库命令存放目录在安装的路径的根目录的bin目录下，可以使用<code>find</code>命令查询出<code>SQLdump</code>命令位置，所以命令目录就是<code>/data/mysql13308/bin/</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@txSugar data<span class="token punctuation">]</span><span class="token comment"># find / -name mysqldump</span>
+/data/mysql13308/bin/mysqldump
+<span class="token punctuation">[</span>root@txSugar data<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><h3 id="配置文件目录"><a href="#配置文件目录" class="header-anchor">#</a> 配置文件目录</h3> <p><code>/data/mysql13308</code>下的<code>my.cnf</code>文件</p> <h2 id="数据库和文件系统的关系"><a href="#数据库和文件系统的关系" class="header-anchor">#</a> 数据库和文件系统的关系</h2> <h3 id="查看默认数据库"><a href="#查看默认数据库" class="header-anchor">#</a> 查看默认数据库</h3> <p>查看一下在我的计算机上当前有哪些数据库：</p> <div class="language-SQL extra-class"><pre class="language-sql"><code>mysql<span class="token operator">&gt;</span> <span class="token keyword">SHOW</span> <span class="token keyword">DATABASES</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Database</span>           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token operator">|</span> information_schema <span class="token operator">|</span>
+<span class="token operator">|</span> mysql              <span class="token operator">|</span>
+<span class="token operator">|</span> performance_schema <span class="token operator">|</span>
+<span class="token operator">|</span> sys                <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------+</span>
+<span class="token number">4</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.03</span> sec<span class="token punctuation">)</span>
+</code></pre></div><p>可以看到有4个数据库是属于MySQL自带的系统数据库。</p> <ul><li><strong>mysql</strong>
+MySQL 系统自带的核心数据库，它存储了MySQL的用户账户和权限信息，一些存储过程、事件的定义信息，一些运行过程中产生的日志信息，一些帮助信息以及时区信息等。</li> <li><strong>information_schema</strong>
+MySQL 系统自带的数据库，这个数据库保存着MySQL服务器<code>维护的所有其他数据库的信息</code>，比如有
+哪些表、哪些视图、哪些触发器、哪些列、哪些索引。这些信息并不是真实的用户数据，而是一些
+描述性信息，有时候也称之为<code>元数据</code> 。在系统数据库 <code>information_schema</code>中提供了一些<code>innodb_sys</code>开头的表，用于表示内部系统表。</li></ul> <div class="language-SQL extra-class"><pre class="language-sql"><code>mysql<span class="token operator">&gt;</span> <span class="token keyword">USE</span> information_schema<span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed
+mysql<span class="token operator">&gt;</span> <span class="token keyword">SHOW</span> <span class="token keyword">TABLES</span> <span class="token operator">LIKE</span> <span class="token string">'innodb_sys%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">--------------------------------------------+</span>
+<span class="token operator">|</span> Tables_in_information_schema <span class="token punctuation">(</span>innodb_sys<span class="token operator">%</span><span class="token punctuation">)</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------------------------------+</span>
+<span class="token operator">|</span> INNODB_SYS_DATAFILES <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_VIRTUAL <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_INDEXES <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_TABLES <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_FIELDS <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_TABLESPACES <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_FOREIGN_COLS <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_COLUMNS <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_FOREIGN <span class="token operator">|</span>
+<span class="token operator">|</span> INNODB_SYS_TABLESTATS <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">--------------------------------------------+</span>
+<span class="token number">10</span> <span class="token keyword">rows</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+</code></pre></div><ul><li><strong>performance_schema</strong>
+MySQL 系统自带的数据库，这个数据库里主要保存MySQL服务器运行过程中的一些状态信息，可以用来<code>监控 MySQL 服务的各类性能指标</code>。包括统计最近执行了哪些语句，在执行过程的每个阶段都花费了多长时间，内存的使用情况等信息。</li> <li><strong>sys</strong>
+MySQL 系统自带的数据库，这个数据库主要是通过<code>视图</code>的形式把<code>information_schema</code>和<code>performance_schema</code>结合起来，帮助系统管理员和开发人员监控 MySQL 的技术性能。</li></ul> <h3 id="数据库在文件系统中的表示"><a href="#数据库在文件系统中的表示" class="header-anchor">#</a> 数据库在文件系统中的表示</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@txSugar data<span class="token punctuation">]</span><span class="token comment"># ll -h</span>
+总用量 89M
+-rw-r----- <span class="token number">1</span> mysql mysql   <span class="token number">56</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 auto.cnf
+-rw------- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.7K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 ca-key.pem
+-rw-r--r-- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.1K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 ca.pem
+-rw-r--r-- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.1K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 client-cert.pem
+-rw------- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.7K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 client-key.pem
+-rw-r----- <span class="token number">1</span> mysql mysql 192K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:10 <span class="token comment">#ib_16384_0.dblwr</span>
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">8</span>.2M <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 <span class="token comment">#ib_16384_1.dblwr</span>
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">5</span>.9K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 ib_buffer_pool
+-rw-r----- <span class="token number">1</span> mysql mysql  12M <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 ibdata1
+-rw-r----- <span class="token number">1</span> mysql mysql  12M <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:21 ibtmp1
+drwxr-x--- <span class="token number">2</span> mysql mysql <span class="token number">4</span>.0K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:21 <span class="token comment">#innodb_redo</span>
+drwxr-x--- <span class="token number">2</span> mysql mysql <span class="token number">4</span>.0K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:20 <span class="token comment">#innodb_temp</span>
+drwxr-x--- <span class="token number">2</span> mysql mysql <span class="token number">4</span>.0K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 mysql
+-rw-r----- <span class="token number">1</span> mysql mysql  24M <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 mysql.ibd
+drwxr-x--- <span class="token number">2</span> mysql mysql <span class="token number">4</span>.0K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 performance_schema
+-rw------- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.7K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 private_key.pem
+-rw-r--r-- <span class="token number">1</span> mysql mysql  <span class="token number">452</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 public_key.pem
+-rw-r--r-- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.1K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 server-cert.pem
+-rw------- <span class="token number">1</span> mysql mysql <span class="token number">1</span>.7K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 server-key.pem
+drwxr-x--- <span class="token number">2</span> mysql mysql <span class="token number">4</span>.0K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">16</span>:03 sys
+drwxr-x--- <span class="token number">2</span> mysql mysql <span class="token number">4</span>.0K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 temp
+-rw-r----- <span class="token number">1</span> mysql mysql  16M <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:10 undo_001
+-rw-r----- <span class="token number">1</span> mysql mysql  16M <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:10 undo_002
+<span class="token punctuation">[</span>root@txSugar data<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><p>这个数据目录下的文件和子目录比较多，除了 information_schema 这个系统数据库外，其他的数据库在<code>数据目录</code>下都有对应的子目录。
+以我的 temp 数据库为例，在MySQL5.7 中打开：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># cd /data/mysql13307/data/temp/</span>
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># ll -h</span>
+总用量 112K
+-rw-r----- <span class="token number">1</span> mysql mysql   <span class="token number">61</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:31 db.opt
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">8</span>.4K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:31 t_tmp.frm
+-rw-r----- <span class="token number">1</span> mysql mysql  96K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:32 t_tmp.ibd
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><p>在MySQL8.0中打开</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@txSugar data<span class="token punctuation">]</span><span class="token comment"># cd /data/mysql13308/data/temp/</span>
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># ll -h</span>
+总用量 112K
+-rw-r----- <span class="token number">1</span> mysql mysql 112K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 t_tmp.ibd
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><h2 id="表在文件系统中的表示"><a href="#表在文件系统中的表示" class="header-anchor">#</a> 表在文件系统中的表示</h2> <h3 id="innodb存储引擎模式"><a href="#innodb存储引擎模式" class="header-anchor">#</a> InnoDB存储引擎模式</h3> <p><strong>1. 表结构</strong>
+为了保存表结构， InnoDB 在<code>数据目录</code>下对应的数据库子目录下创建了一个专门用于<code>描述表结构的文件</code>，文件名是这样：<code>表名.frm</code>
+比如在数据库temp创建一个test表</p> <div class="language-SQL extra-class"><pre class="language-sql"><code>mysql<span class="token operator">&gt;</span> <span class="token keyword">use</span> <span class="token keyword">temp</span><span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed
+mysql<span class="token operator">&gt;</span> <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> test <span class="token punctuation">(</span>c1 <span class="token keyword">INT</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.03</span> sec<span class="token punctuation">)</span>
+
+mysql<span class="token operator">&gt;</span> 
+</code></pre></div><p>那在数据库 <code>temp</code>对应的子目录下就会创建一个名为<code>test.frm</code>的用于描述表结构的文件。<code>.frm</code>文件的格式在不同的平台上都是相同的。这个后缀名为<code>.frm</code>是以<code>二进制格式</code>存储的，我们直接打开是乱码的。MySQL8.0之后.frm文件与.ibd文件合并</p> <p>MySQL 5.7.36文件列表：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># cd /data/mysql13307/data/temp/</span>
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># ll -h</span>
+总用量 220K
+-rw-r----- <span class="token number">1</span> mysql mysql   <span class="token number">61</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:31 db.opt
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">8</span>.4K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">19</span>:27 test.frm
+-rw-r----- <span class="token number">1</span> mysql mysql  96K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">19</span>:27 test.ibd
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">8</span>.4K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:31 t_tmp.frm
+-rw-r----- <span class="token number">1</span> mysql mysql  96K <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:32 t_tmp.ibd
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><p>MySQL 8.0.32文件列表：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># ll</span>
+总用量 <span class="token number">236</span>
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">114688</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">19</span>:20 test.ibd
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">114688</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 t_tmp.ibd
+</code></pre></div><p><strong>2. 表中数据和索引</strong></p> <ul><li><strong>系统表空间（system tablespace）</strong>
+默认情况下，InnoDB会在数据目录下创建一个名为 <code>ibdata1</code> 、大小为<code>12M</code>的文件，这个文件就是对应的 系统表空间 在文件系统上的表示。怎么才12M？注意这个文件是 自扩展文件 ，当不够用的时候它会自己增加文件大小。
+当然，如果你想让系统表空间对应文件系统上多个实际文件，或者仅仅觉得原来的<code>ibdata1</code>这个文件名难听，那可以在MySQL启动时配置对应的文件路径以及它们的大小，比如我们这样修改一下<code>my.cnf</code>配置
+文件：</li></ul> <div class="language-properties extra-class"><pre class="language-properties"><code>  [server]
+<span class="token key attr-name">  innodb_data_file_path</span><span class="token punctuation">=</span><span class="token value attr-value">data1:512M;data2:512M:autoextend</span>
+</code></pre></div><ul><li><strong>独立表空间（file-per-table tablespace）</strong>
+在MySQL5.6.6以及之后的版本中，InnoDB并不会默认的把各个表的数据存储到系统表空间中，而是为 每一个表建立一个独立表空间 ，也就是说我们创建了多少个表，就有多少个独立表空间。使用 独立表空间来存储表数据的话，会在该表所属数据库对应的子目录下创建一个表示该独立表空间的文件，文件名和表名相同，只不过添加了一个 .ibd 的扩展名而已，所以完整的文件名称长这样：<code>表名.ibd</code>
+比如：我们使用了 独立表空间 去存储<code>temp</code>数据库下的<code>test</code>表的话，那么在该表所在数据库对应的<code>temp</code>目录下会为<code>test</code>表创建这两个文件：<code>test.frm</code>、<code>test.ibd</code>，其中<code>test.ibd</code>文件就用来存储<code>test</code>表中的数据和索引。</li> <li><strong>系统表空间与独立表空间的设置</strong>
+我们可以自己指定使用 系统表空间 还是 独立表空间 来存储数据，这个功能由启动参数<code>innodb_file_per_table</code>控制，比如说我们想刻意将表数据都存储到 系统表空间 时，可以在启动MySQL服务器的时候这样配置：</li></ul> <div class="language-properties extra-class"><pre class="language-properties"><code>  [server]
+<span class="token key attr-name">  innodb_file_per_table</span><span class="token punctuation">=</span><span class="token value attr-value">0 # 0：代表使用系统表空间； 1：代表使用独立表空间</span>
+</code></pre></div><p>默认情况下：</p> <div class="language-SQL extra-class"><pre class="language-sql"><code>   mysql<span class="token operator">&gt;</span>  <span class="token keyword">show</span> variables <span class="token operator">like</span> <span class="token string">'innodb_file_per_table'</span><span class="token punctuation">;</span>
+  <span class="token operator">+</span><span class="token comment">-----------------------+-------+</span>
+  <span class="token operator">|</span> Variable_name         <span class="token operator">|</span> <span class="token keyword">Value</span> <span class="token operator">|</span>
+  <span class="token operator">+</span><span class="token comment">-----------------------+-------+</span>
+  <span class="token operator">|</span> innodb_file_per_table <span class="token operator">|</span> <span class="token keyword">ON</span>    <span class="token operator">|</span>
+  <span class="token operator">+</span><span class="token comment">-----------------------+-------+</span>
+  <span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+  mysql<span class="token operator">&gt;</span>
+</code></pre></div><ul><li><strong>其他类型的表空间</strong>
+随着MySQL的发展，除了上述两种老牌表空间之外，现在还新提出了一些不同类型的表空间，比如通用表空间（general tablespace）、临时表空间（temporary tablespace）等。</li></ul> <h3 id="myisam存储引擎模式"><a href="#myisam存储引擎模式" class="header-anchor">#</a> MyISAM存储引擎模式</h3> <ul><li><strong>表结构</strong>
+在存储表结构方面，<code>MyISAM</code>和<code>InnoDB</code>一样，也是在<code>数据目录</code>下对应的数据库子目录下创建了一个专门用于描述表结构的文件：<code>表名.frm</code></li> <li><strong>表中数据和索引</strong>
+在MyISAM中的索引全部都是<code>二级索引</code>，该存储引擎的<code>数据和索引是分开存放</code>的。所以在文件系统中也是使用不同的文件来存储数据文件和索引文件，同时表数据都存放在对应的数据库子目录下。假如<code>test</code>表使用MyISAM存储引擎的话，那么在它所在数据库对应的temp目录下会为<code>test</code>表创建这三个文件：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>  test.frm 存储表结构
+  test.MYD 存储数据 (MYData)
+  test.MYI 存储索引 (MYIndex)
+</code></pre></div><p>举例：创建一个 MyISAM 表，使用<code>ENGINE</code>选项显式指定引擎。因为<code>InnoDB</code>是默认引擎。</p> <div class="language-SQL extra-class"><pre class="language-sql"><code><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>student_myisam<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
+<span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">bigint</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+<span class="token identifier"><span class="token punctuation">`</span>name<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token identifier"><span class="token punctuation">`</span>age<span class="token punctuation">`</span></span> <span class="token keyword">int</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token identifier"><span class="token punctuation">`</span>sex<span class="token punctuation">`</span></span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token keyword">ENGINE</span><span class="token operator">=</span>MYISAM <span class="token keyword">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8mb3<span class="token punctuation">;</span>
+</code></pre></div><p>MySQL 5.7.36文件列表：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>  <span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># ll</span>
+  总用量 <span class="token number">236</span>
+  -rw-r----- <span class="token number">1</span> mysql mysql    <span class="token number">61</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:31 db.opt
+  -rw-r----- <span class="token number">1</span> mysql mysql  <span class="token number">8642</span> <span class="token number">4</span>月  <span class="token number">28</span> <span class="token number">10</span>:47 student_myisam.frm
+  -rw-r----- <span class="token number">1</span> mysql mysql     <span class="token number">0</span> <span class="token number">4</span>月  <span class="token number">28</span> <span class="token number">10</span>:47 student_myisam.MYD
+  -rw-r----- <span class="token number">1</span> mysql mysql  <span class="token number">1024</span> <span class="token number">4</span>月  <span class="token number">28</span> <span class="token number">10</span>:47 student_myisam.MYI
+  -rw-r----- <span class="token number">1</span> mysql mysql  <span class="token number">8556</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">19</span>:27 test.frm
+  -rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">98304</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">19</span>:27 test.ibd
+  -rw-r----- <span class="token number">1</span> mysql mysql  <span class="token number">8586</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:31 t_tmp.frm
+  -rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">98304</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">18</span>:32 t_tmp.ibd
+  <span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><p>MySQL 8.0.32文件列表：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>  <span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># ll</span>
+总用量 <span class="token number">236</span>
+-rw-r----- <span class="token number">1</span> mysql mysql   <span class="token number">4327</span> <span class="token number">4</span>月  <span class="token number">28</span> <span class="token number">10</span>:54 student_myisam_369.sdi
+-rw-r----- <span class="token number">1</span> mysql mysql      <span class="token number">0</span> <span class="token number">4</span>月  <span class="token number">28</span> <span class="token number">10</span>:54 student_myisam.MYD
+-rw-r----- <span class="token number">1</span> mysql mysql   <span class="token number">1024</span> <span class="token number">4</span>月  <span class="token number">28</span> <span class="token number">10</span>:54 student_myisam.MYI
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">114688</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">19</span>:20 test.ibd
+-rw-r----- <span class="token number">1</span> mysql mysql <span class="token number">114688</span> <span class="token number">4</span>月  <span class="token number">27</span> <span class="token number">17</span>:09 t_tmp.ibd
+<span class="token punctuation">[</span>root@txSugar temp<span class="token punctuation">]</span><span class="token comment"># </span>
+</code></pre></div><h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>举例：<code>数据库a</code>，<code>表b</code>。</p> <ol><li>如果表b采用<code>InnoDB</code>，<code>data\a</code>中会产生1个或者2个文件：</li></ol> <ul><li><p>b.frm ：描述表结构文件，字段长度等</p> <p>如果采用<code>系统表空间</code>模式的，数据信息和索引信息都存储在<code>ibdata1</code>中</p> <p>如果采用<code>独立表空间</code>存储模式，<code>data\a</code>中还会产生<code>b.ibd</code>文件（存储数据信息和索引信息）</p></li> <li><p>此外：</p> <p>① <code>SQL5.7</code>中会在data/a的目录下生成<code>db.opt</code>文件用于保存数据库的相关配置。比如：字符集、比较规则。而<code>SQL8.0</code>不再提供<code>db.opt</code>文件。</p> <p>② <code>SQL8.0</code>中不再单独提供b.frm，而是合并在b.ibd文件中。</p></li></ul> <ol start="2"><li>如果表b采用<code>MyISAM</code>，<code>data\a</code>中会产生3个文件：</li></ol> <ul><li>MySQL5.7 中<code>b.frm</code>：描述表结构文件，字段长度等。</li> <li>MySQL8.0 中 <code>b.xxx.sdi</code> ：描述表结构文件，字段长度等</li> <li><code>b.MYD</code>(MYData)：数据信息文件，存储数据信息(如果采用独立表存储模式)</li> <li><code>b.MYI</code>(MYIndex)：存放索引信息文件</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/数据库/MySQL/用户与权限管理.html">
+        用户与权限管理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.becc5145.js" defer></script><script src="/assets/js/2.8a031f56.js" defer></script><script src="/assets/js/43.229a5a6e.js" defer></script>
+  </body>
+</html>
