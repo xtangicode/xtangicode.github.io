@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自然语言处理 NLP | Sugar</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="Sugar">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.540aeaec.js" as="script"><link rel="preload" href="/assets/js/2.c3162e30.js" as="script"><link rel="preload" href="/assets/js/46.dbaf81a4.js" as="script"><link rel="prefetch" href="/assets/js/10.9e12a450.js"><link rel="prefetch" href="/assets/js/11.9a2889a3.js"><link rel="prefetch" href="/assets/js/12.331855f5.js"><link rel="prefetch" href="/assets/js/13.c0a595e0.js"><link rel="prefetch" href="/assets/js/14.71cd8cbc.js"><link rel="prefetch" href="/assets/js/15.b5799bea.js"><link rel="prefetch" href="/assets/js/16.2ca2deb5.js"><link rel="prefetch" href="/assets/js/17.19608163.js"><link rel="prefetch" href="/assets/js/18.4dc79ea4.js"><link rel="prefetch" href="/assets/js/19.3fecadec.js"><link rel="prefetch" href="/assets/js/20.071d9b83.js"><link rel="prefetch" href="/assets/js/21.353c4514.js"><link rel="prefetch" href="/assets/js/22.5f92fa4d.js"><link rel="prefetch" href="/assets/js/23.da4f507b.js"><link rel="prefetch" href="/assets/js/24.cff90518.js"><link rel="prefetch" href="/assets/js/25.c203e8fb.js"><link rel="prefetch" href="/assets/js/26.51d41395.js"><link rel="prefetch" href="/assets/js/27.0a75ba43.js"><link rel="prefetch" href="/assets/js/28.73269734.js"><link rel="prefetch" href="/assets/js/29.d65c78d6.js"><link rel="prefetch" href="/assets/js/3.b1ad3da4.js"><link rel="prefetch" href="/assets/js/30.230a8bdb.js"><link rel="prefetch" href="/assets/js/31.dea786d9.js"><link rel="prefetch" href="/assets/js/32.6321160c.js"><link rel="prefetch" href="/assets/js/33.02db866e.js"><link rel="prefetch" href="/assets/js/34.2eb6f7f1.js"><link rel="prefetch" href="/assets/js/35.4107ba8c.js"><link rel="prefetch" href="/assets/js/36.8cba08f9.js"><link rel="prefetch" href="/assets/js/37.20e0212a.js"><link rel="prefetch" href="/assets/js/38.c609627a.js"><link rel="prefetch" href="/assets/js/39.1a9aeb64.js"><link rel="prefetch" href="/assets/js/4.6b930ecf.js"><link rel="prefetch" href="/assets/js/40.026a1012.js"><link rel="prefetch" href="/assets/js/41.06893ddd.js"><link rel="prefetch" href="/assets/js/42.61775a53.js"><link rel="prefetch" href="/assets/js/43.a42a2f61.js"><link rel="prefetch" href="/assets/js/44.d1bce4cc.js"><link rel="prefetch" href="/assets/js/45.cf75fd2f.js"><link rel="prefetch" href="/assets/js/47.e8e06829.js"><link rel="prefetch" href="/assets/js/48.20fd7187.js"><link rel="prefetch" href="/assets/js/49.57e01b43.js"><link rel="prefetch" href="/assets/js/5.cc709946.js"><link rel="prefetch" href="/assets/js/50.db1068e7.js"><link rel="prefetch" href="/assets/js/51.eef5740d.js"><link rel="prefetch" href="/assets/js/52.02ce20d0.js"><link rel="prefetch" href="/assets/js/53.c25129d6.js"><link rel="prefetch" href="/assets/js/54.2e6e9a45.js"><link rel="prefetch" href="/assets/js/55.a4b6f932.js"><link rel="prefetch" href="/assets/js/56.7fab891a.js"><link rel="prefetch" href="/assets/js/57.97487f10.js"><link rel="prefetch" href="/assets/js/58.5ced0303.js"><link rel="prefetch" href="/assets/js/59.792820e4.js"><link rel="prefetch" href="/assets/js/6.2473f399.js"><link rel="prefetch" href="/assets/js/60.262706a9.js"><link rel="prefetch" href="/assets/js/61.d4e2e202.js"><link rel="prefetch" href="/assets/js/62.f5b09c56.js"><link rel="prefetch" href="/assets/js/63.e1112c2c.js"><link rel="prefetch" href="/assets/js/64.fb088828.js"><link rel="prefetch" href="/assets/js/65.4d8da7f9.js"><link rel="prefetch" href="/assets/js/66.6f644173.js"><link rel="prefetch" href="/assets/js/67.c19dbcc3.js"><link rel="prefetch" href="/assets/js/68.ce487c24.js"><link rel="prefetch" href="/assets/js/69.ada4c63b.js"><link rel="prefetch" href="/assets/js/7.9358edd5.js"><link rel="prefetch" href="/assets/js/70.3a9acc1f.js"><link rel="prefetch" href="/assets/js/71.bc418a50.js"><link rel="prefetch" href="/assets/js/72.75d8d9b1.js"><link rel="prefetch" href="/assets/js/73.25fadb33.js"><link rel="prefetch" href="/assets/js/74.47de0ebc.js"><link rel="prefetch" href="/assets/js/75.9cf729b0.js"><link rel="prefetch" href="/assets/js/76.4ada3539.js"><link rel="prefetch" href="/assets/js/77.b545785a.js"><link rel="prefetch" href="/assets/js/78.ce47d46c.js"><link rel="prefetch" href="/assets/js/8.588ab7c5.js"><link rel="prefetch" href="/assets/js/9.465e7e2c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sugar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  Flutter
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Nacos
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  OSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Kafka
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  架构
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  K8S
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  CI/CD
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  监控
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  日志收集
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  VUE
+</a></li><li class="dropdown-item"><!----> <a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  Flutter
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Nacos
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  OSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Kafka
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  架构
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  K8S
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  CI/CD
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  监控
+</a></li><li class="dropdown-item"><!----> <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/.html" class="nav-link">
+  日志收集
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>ElasticSearch</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/数据库/ElasticSearch/ES知识体系.html" class="sidebar-link">ES知识体系</a></li><li><a href="/数据库/ElasticSearch/ES基础-介绍.html" class="sidebar-link">ES基础-介绍</a></li><li><a href="/数据库/ElasticSearch/ES基础-生态和场景方案.html" class="sidebar-link">ES基础-生态和场景方案</a></li><li><a href="/数据库/ElasticSearch/ES入门-ES安装及HTTP操作.html" class="sidebar-link">ES入门-ES安装及HTTP操作</a></li><li><a href="/数据库/ElasticSearch/ES入门-文档评分机制.html" class="sidebar-link">ES入门-文档评分机制</a></li><li><a href="/数据库/ElasticSearch/ES入门-JAVA操作.html" class="sidebar-link">ES入门-JAVA操作</a></li><li><a href="/数据库/ElasticSearch/ES进阶-核心概念.html" class="sidebar-link">ES进阶-核心概念</a></li><li><a href="/数据库/ElasticSearch/ES进阶-系统架构.html" class="sidebar-link">ES进阶-系统架构</a></li><li><a href="/数据库/ElasticSearch/ES进阶-EQL操作.html" class="sidebar-link">ES进阶-EQL操作</a></li><li><a href="/数据库/ElasticSearch/ES进阶-SQL操作.html" class="sidebar-link">ES进阶-SQL操作</a></li><li><a href="/数据库/ElasticSearch/ES进阶-SQL客户端DataGrip.html" class="sidebar-link">ES进阶-SQL客户端DataGrip</a></li><li><a href="/数据库/ElasticSearch/ES进阶-自然语言处理NLP.html" class="active sidebar-link">ES进阶-自然语言处理NLP</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/数据库/ElasticSearch/ES进阶-自然语言处理NLP.html#自然语言处理-nlp" class="sidebar-link">自然语言处理 NLP</a></li><li class="sidebar-sub-header"><a href="/数据库/ElasticSearch/ES进阶-自然语言处理NLP.html#nlp-在-elasticsearch-7-x-和-8-x-中的区别" class="sidebar-link">NLP 在 Elasticsearch 7.x 和 8.x 中的区别</a></li><li class="sidebar-sub-header"><a href="/数据库/ElasticSearch/ES进阶-自然语言处理NLP.html#nlp示例" class="sidebar-link">NLP示例</a></li></ul></li><li><a href="/数据库/ElasticSearch/中文分词封装-TokenizerUtil.html" class="sidebar-link">中文分词封装-TokenizerUtil</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="自然语言处理-nlp"><a href="#自然语言处理-nlp" class="header-anchor">#</a> 自然语言处理 NLP</h2> <p>自然语言处理(NLP，Natural Language Processing) 是研究人与计算机交互的语言问题的一门学科</p> <p>处理自然语言的关键是要让计算机“理解”自然语言，所以自然语言处理又叫做自然语言理解(NLU，NaturalLanguage Understanding)，也称为计算语言学(Computational Linguistics)。一方面它是语言信息处理的一个分支，另一方面它是人工智能(AI, Artificial Intelligence)的核心课题之一</p> <p>简而言之，NLP 是指我们可以使用软件来操作和理解口语或书面文本或自然语言的方式。</p> <p>2018年，Google 开源了一种用于 NLP 预训练的新技术，称为来自 Transformers 的双向编码器呈现，或 BERT。 BERT 通过在没有任何人工参与的情况下对互联网大小的数据集（如， 维基百科和数字书籍）进行训练来利用 “transfer learning”。 Transfer learning 允许对 BERT 模型进行预训练以进行通用语言理解。一旦模型只经过一次预训练，它就可以被重用并针对更具体的任务进行微调，以了解语言的使用方式。</p> <p>为了支持类 BERT 模型（使用与 BERT 相同的标记器的模型），Elasticsearch 将首先通过 PyTorch 模型支持支持大多数最常见的 NLP 任务。 PyTorch 是最受欢迎的现代机器学习库之一，拥有大量活跃用户，它是一个支持深度神经网络的库，如 BERT 使用的Transformer 架构</p> <p>随着 Elasticsearch 8.0 的发布，Elastic 很高兴能够将 PyTorch 机器学习模型上传到 Elasticsearch 中， 以在 Elastic Stack 中提供现代自然语言处理 (NLP)。现在，Elasticsearch 用户能够集成用于构建 NLP 模型的最流行的格式之一，并将这些模型作为 NLP 数据管道的一部分通过我们的Inference processor 整合到 Elasticsearch 中</p> <p>NLP 任务：</p> <p>（1）情绪分析：用于识别正面与负面陈述的二元分类</p> <p>（2）命名实体识别 (NER)：从非结构化文本构建结构，尝试提取名称、位置或组织等细节</p> <p>（3）文本分类：零样本分类允许你根据你选择的类对文本进行分类，而无需进行预训练</p> <p>（4）文本嵌入：用于 k 近邻 (kNN) 搜索</p> <h2 id="nlp-在-elasticsearch-7-x-和-8-x-中的区别"><a href="#nlp-在-elasticsearch-7-x-和-8-x-中的区别" class="header-anchor">#</a> NLP 在 Elasticsearch 7.x 和 8.x 中的区别</h2> <p>Elasticsearch 一直是进行 NLP 的好地方，但从历史上看，它需要在 Elasticsearch 之外进行一些处理，或者编写一些非常复杂的插件。</p> <p>Elastic 8.0，用户现在可以在 Elasticsearch 中更直接地执行命名实体识别、情感分析、文本分类等操作——无需额外的组件或编码。 不仅在 Elasticsearch 中本地计算和创建向量在水平可扩展性方面是“胜利”（通过在服务器集群中分布计算）——这一变化还为 Elasticsearch 用户节省了大量时间和精力</p> <p>Elastic 8.0，用户可以直接在 Elasticsearch 中使用 PyTorch 机器学习模型（例如 BERT）， 并在 Elasticsearch 中使用这些模型进行推理。通过使用户能够直接在 Elasticsearch 中执行推 理，将现代 NLP 的强大功能集成到搜索应用程序和体验、本质上更高效（得益于 Elasticsearch的分布式计算能力）和 NLP 本身比以往任何时候都更容易 变得更快，因为你不需要将数据移出到单独的进程或系统中</p> <h2 id="nlp示例"><a href="#nlp示例" class="header-anchor">#</a> NLP示例</h2> <p>Apache OpenNLP是一个开源Java库，它使用过程自然语言文本。OpenNLP是一个基于Java机器学习工具包，用于处理自然语言文本。OpenNLP提供了令牌化，句子分割，词性标注，命名实体提取，分块，解析和协同参考分辨率等服务。</p> <p>OpenNLP支持大多数常用的NLP任务,例如:标识化、句子切分、部分词性标注、名称抽取、组块、解析等。 OpenNLP:驾驭文本,分词那些事 OpenNLP效率和使用便捷度较好。另外其针对Java开发提供开源的API</p> <p>使用opennlp演示</p> <p>https://github.com/spinscale/elasticsearch-ingest-opennlp/releases</p> <p>注：下载和 Elasticsearch相同版本</p> <p><strong>1. 安装opennlp</strong></p> <p>将下载下来的插件上传到<strong>所有 ES 服务器节点</strong>的 plugins 路径中</p> <p><strong>2. 修改 plugin-descriptor 文件，修改版本号 和 ES版本保持一致</strong></p> <p>elasticsearch.version=7.16.0</p> <p><strong>3. 下载 NER 模型</strong></p> <p>bin/ingest-opennlp/download-models
+会在 ES目录下的 config/ingest-opennlp-7.16.0.1 目录下看到如下文件</p> <p><strong>4. 配置OpenNLP</strong></p> <p>修改配置文件：config/elasticsearch.yml</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">ingest.opennlp.model.file.persons</span><span class="token punctuation">:</span> en<span class="token punctuation">-</span>ner<span class="token punctuation">-</span>persons.bin
+<span class="token key atrule">ingest.opennlp.model.file.dates</span><span class="token punctuation">:</span> en<span class="token punctuation">-</span>ner<span class="token punctuation">-</span>dates.bin
+<span class="token key atrule">ingest.opennlp.model.file.locations</span><span class="token punctuation">:</span> en<span class="token punctuation">-</span>ner<span class="token punctuation">-</span>locations.bin
+</code></pre></div><p>重新启动 Elasticsearch</p> <p><strong>5. 测试</strong></p> <div class="language-json extra-class"><pre class="language-json"><code>#创建一个支持 NLP 的 pipeline
+PUT _ingest/pipeline/opennlp-pipeline
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;A pipeline to do named entity extraction&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;processors&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;opennlp&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;field&quot;</span><span class="token operator">:</span> <span class="token string">&quot;message&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+#增加数据
+PUT my-nlp-index
+ 
+PUT my-nlp-index/_doc/<span class="token number">1</span>?pipeline=opennlp-pipeline
+<span class="token punctuation">{</span>
+ <span class="token property">&quot;message&quot;</span><span class="token operator">:</span> &quot;Shay Banon announced the release of Elasticsearch <span class="token number">6.0</span> in November 
+<span class="token number">2017</span>&quot;
+<span class="token punctuation">}</span>
+ 
+PUT my-nlp-index/_doc/<span class="token number">2</span>?pipeline=opennlp-pipeline
+<span class="token punctuation">{</span>
+ <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> &quot;Kobe Bryant was one of the best basketball players of all times. 
+Not even Michael Jordan has ever scored <span class="token number">81</span> points in one game. Munich is really 
+an awesome city<span class="token punctuation">,</span> but New York is as well. Yesterday has been the hottest day of 
+the year.&quot;
+<span class="token punctuation">}</span>
+ 
+#查看数据
+GET my-nlp-index/_doc/<span class="token number">1</span>
+GET my-nlp-index/_doc/<span class="token number">2</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/数据库/ElasticSearch/ES进阶-SQL客户端DataGrip.html" class="prev">
+        ES进阶-SQL客户端DataGrip
+      </a></span> <span class="next"><a href="/数据库/ElasticSearch/中文分词封装-TokenizerUtil.html">
+        中文分词封装-TokenizerUtil
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.540aeaec.js" defer></script><script src="/assets/js/2.c3162e30.js" defer></script><script src="/assets/js/46.dbaf81a4.js" defer></script>
+  </body>
+</html>
