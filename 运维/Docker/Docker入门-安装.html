@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>确定本机系统内核 | Sugar</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="Sugar">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.87787286.js" as="script"><link rel="preload" href="/assets/js/2.7474dc9b.js" as="script"><link rel="preload" href="/assets/js/24.39c48b23.js" as="script"><link rel="prefetch" href="/assets/js/10.f2c09d91.js"><link rel="prefetch" href="/assets/js/100.31dbbd22.js"><link rel="prefetch" href="/assets/js/11.ab3c80b7.js"><link rel="prefetch" href="/assets/js/12.d63bbe50.js"><link rel="prefetch" href="/assets/js/13.32e6b473.js"><link rel="prefetch" href="/assets/js/14.f5f53505.js"><link rel="prefetch" href="/assets/js/15.7c1473bf.js"><link rel="prefetch" href="/assets/js/16.741dad00.js"><link rel="prefetch" href="/assets/js/17.d1723ba1.js"><link rel="prefetch" href="/assets/js/18.598fa16b.js"><link rel="prefetch" href="/assets/js/19.2872ff11.js"><link rel="prefetch" href="/assets/js/20.aaebf09b.js"><link rel="prefetch" href="/assets/js/21.6fe37cfb.js"><link rel="prefetch" href="/assets/js/22.e816f1dd.js"><link rel="prefetch" href="/assets/js/23.aa12e97d.js"><link rel="prefetch" href="/assets/js/25.d0a801eb.js"><link rel="prefetch" href="/assets/js/26.b8858599.js"><link rel="prefetch" href="/assets/js/27.efe7508c.js"><link rel="prefetch" href="/assets/js/28.665889f0.js"><link rel="prefetch" href="/assets/js/29.35ad5d33.js"><link rel="prefetch" href="/assets/js/3.afdd60e2.js"><link rel="prefetch" href="/assets/js/30.5e1a82f7.js"><link rel="prefetch" href="/assets/js/31.b432b24d.js"><link rel="prefetch" href="/assets/js/32.32bc3001.js"><link rel="prefetch" href="/assets/js/33.2d49e809.js"><link rel="prefetch" href="/assets/js/34.4b5f764a.js"><link rel="prefetch" href="/assets/js/35.ceb9d252.js"><link rel="prefetch" href="/assets/js/36.13ae58d4.js"><link rel="prefetch" href="/assets/js/37.a70a7b9c.js"><link rel="prefetch" href="/assets/js/38.0f560cc1.js"><link rel="prefetch" href="/assets/js/39.201caad1.js"><link rel="prefetch" href="/assets/js/4.c5ce5fb4.js"><link rel="prefetch" href="/assets/js/40.b9ab535d.js"><link rel="prefetch" href="/assets/js/41.88216b6f.js"><link rel="prefetch" href="/assets/js/42.0364b286.js"><link rel="prefetch" href="/assets/js/43.f4d17a1d.js"><link rel="prefetch" href="/assets/js/44.04bd056d.js"><link rel="prefetch" href="/assets/js/45.d18bd618.js"><link rel="prefetch" href="/assets/js/46.52048131.js"><link rel="prefetch" href="/assets/js/47.2619df9c.js"><link rel="prefetch" href="/assets/js/48.62293875.js"><link rel="prefetch" href="/assets/js/49.ee8db2f4.js"><link rel="prefetch" href="/assets/js/5.430e5ee0.js"><link rel="prefetch" href="/assets/js/50.46c0678a.js"><link rel="prefetch" href="/assets/js/51.45011951.js"><link rel="prefetch" href="/assets/js/52.bf81a524.js"><link rel="prefetch" href="/assets/js/53.f07d53be.js"><link rel="prefetch" href="/assets/js/54.fb65738f.js"><link rel="prefetch" href="/assets/js/55.3a3c7c03.js"><link rel="prefetch" href="/assets/js/56.9c4d1c26.js"><link rel="prefetch" href="/assets/js/57.e5a70254.js"><link rel="prefetch" href="/assets/js/58.5ef7a38e.js"><link rel="prefetch" href="/assets/js/59.ac55374e.js"><link rel="prefetch" href="/assets/js/6.8bd84f3d.js"><link rel="prefetch" href="/assets/js/60.a9f185d1.js"><link rel="prefetch" href="/assets/js/61.4691b1f0.js"><link rel="prefetch" href="/assets/js/62.19a13ebb.js"><link rel="prefetch" href="/assets/js/63.7ded963b.js"><link rel="prefetch" href="/assets/js/64.ef2ed6fc.js"><link rel="prefetch" href="/assets/js/65.b31da18d.js"><link rel="prefetch" href="/assets/js/66.2486639a.js"><link rel="prefetch" href="/assets/js/67.70fc71c6.js"><link rel="prefetch" href="/assets/js/68.fc5262a5.js"><link rel="prefetch" href="/assets/js/69.92c0bf80.js"><link rel="prefetch" href="/assets/js/7.bb64f78e.js"><link rel="prefetch" href="/assets/js/70.53830da0.js"><link rel="prefetch" href="/assets/js/71.98ac4b82.js"><link rel="prefetch" href="/assets/js/72.953b023e.js"><link rel="prefetch" href="/assets/js/73.7153dfd0.js"><link rel="prefetch" href="/assets/js/74.a69b16c5.js"><link rel="prefetch" href="/assets/js/75.90a10999.js"><link rel="prefetch" href="/assets/js/76.0fb3a421.js"><link rel="prefetch" href="/assets/js/77.d043222c.js"><link rel="prefetch" href="/assets/js/78.d404934c.js"><link rel="prefetch" href="/assets/js/79.fe5693cf.js"><link rel="prefetch" href="/assets/js/8.de2f67b9.js"><link rel="prefetch" href="/assets/js/80.4a11c23e.js"><link rel="prefetch" href="/assets/js/81.be0355cb.js"><link rel="prefetch" href="/assets/js/82.08c9702a.js"><link rel="prefetch" href="/assets/js/83.c314c22c.js"><link rel="prefetch" href="/assets/js/84.e6f1bbcb.js"><link rel="prefetch" href="/assets/js/85.0e39afd3.js"><link rel="prefetch" href="/assets/js/86.c3d611e8.js"><link rel="prefetch" href="/assets/js/87.d5fbf7bd.js"><link rel="prefetch" href="/assets/js/88.f735d6fb.js"><link rel="prefetch" href="/assets/js/89.2e900324.js"><link rel="prefetch" href="/assets/js/9.d7379f7d.js"><link rel="prefetch" href="/assets/js/90.76c03561.js"><link rel="prefetch" href="/assets/js/91.aa36d6e6.js"><link rel="prefetch" href="/assets/js/92.3f1dacf4.js"><link rel="prefetch" href="/assets/js/93.baa00a98.js"><link rel="prefetch" href="/assets/js/94.dac730b5.js"><link rel="prefetch" href="/assets/js/95.abd38298.js"><link rel="prefetch" href="/assets/js/96.fae986f1.js"><link rel="prefetch" href="/assets/js/97.c4aaa517.js"><link rel="prefetch" href="/assets/js/98.7d85573e.js"><link rel="prefetch" href="/assets/js/99.5879968c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sugar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  Flutter
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/流媒体服务.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Nacos
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  OSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Kafka
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  架构
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/JDK安装.html" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/运维/Docker/Docker入门-介绍.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  K8S
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  CI/CD
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  监控
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  日志收集
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  Flutter
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/流媒体服务.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Nacos
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  OSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Kafka
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  架构
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/JDK安装.html" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/运维/Docker/Docker入门-介绍.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  K8S
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  CI/CD
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  监控
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  日志收集
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Docker入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/运维/Docker/Docker入门-介绍.html" class="sidebar-link">介绍</a></li><li><a href="/运维/Docker/Docker入门-架构.html" class="sidebar-link">架构</a></li><li><a href="/运维/Docker/Docker入门-安装.html" class="active sidebar-link">安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#确定本机系统内核" class="sidebar-link">确定本机系统内核</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#卸载旧版本" class="sidebar-link">卸载旧版本</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#安装依赖库" class="sidebar-link">安装依赖库</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#设置稳定版本的镜像仓库" class="sidebar-link">设置稳定版本的镜像仓库</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#更新yum软件包索引" class="sidebar-link">更新yum软件包索引</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#安装docker-engine" class="sidebar-link">安装Docker Engine</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#启动docker" class="sidebar-link">启动docker</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#运行hello-world镜像验证是否正确安装了docker-engine" class="sidebar-link">运行hello-world镜像验证是否正确安装了Docker Engine</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#配置hub国内镜像" class="sidebar-link">配置Hub国内镜像</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#配置阿里云镜像" class="sidebar-link">配置阿里云镜像</a></li></ul></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#run命令干了哪些事情" class="sidebar-link">run命令干了哪些事情</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#卸载" class="sidebar-link">卸载</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker入门-安装.html#底层原理" class="sidebar-link">底层原理</a></li></ul></li><li><a href="/运维/Docker/Docker入门-常用命令.html" class="sidebar-link">常用命令</a></li><li><a href="/运维/Docker/Docker入门-镜像.html" class="sidebar-link">镜像</a></li><li><a href="/运维/Docker/Docker入门-数据卷.html" class="sidebar-link">数据卷</a></li><li><a href="/运维/Docker/Docker入门-相关软件环境安装.html" class="sidebar-link">相关软件环境安装</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Docker进阶</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/运维/Docker/Docker进阶-Dockerfile.html" class="sidebar-link">Dockerfile</a></li><li><a href="/运维/Docker/Docker进阶-网络.html" class="sidebar-link">网络</a></li><li><a href="/运维/Docker/Docker进阶-Docker Compose容器编排.html" class="sidebar-link">Docker Compose容器编排</a></li><li><a href="/运维/Docker/Docker进阶-轻量级可视化工具Portainer.html" class="sidebar-link">轻量级可视化工具Portainer</a></li><li><a href="/运维/Docker/Docker进阶-容器监控CAdvisor+InfluxDB+Granfana.html" class="sidebar-link">容器监控CAdvisor+InfluxDB+Granfana</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="确定本机系统内核"><a href="#确定本机系统内核" class="header-anchor">#</a> 确定本机系统内核</h2> <p>本机系统是CentOS 7</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost docker<span class="token punctuation">]</span><span class="token comment"># cat /etc/redhat-release </span>
+CentOS Linux release <span class="token number">7.4</span>.1708 <span class="token punctuation">(</span>Core<span class="token punctuation">)</span> 
+</code></pre></div><p>或者</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost docker<span class="token punctuation">]</span><span class="token comment"># uname -a</span>
+Linux localhost.localdomain <span class="token number">3.10</span>.0-693.el7.x86_64 <span class="token comment">#1 SMP Tue Aug 22 21:09:27 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></div><h2 id="卸载旧版本"><a href="#卸载旧版本" class="header-anchor">#</a> 卸载旧版本</h2> <p>较旧的Docker版本称为docker或docker-engine。如果已安装这些程序，请卸载它们以及相关的依赖项。<code>/var/lib/docker/</code>下的镜像、容器等文件也需要可以自行删除。</p> <div class="language-shell extra-class"><pre class="language-shell"><code> yum remove <span class="token function">docker</span> <span class="token punctuation">\</span>
+             docker-client <span class="token punctuation">\</span>
+             docker-client-latest <span class="token punctuation">\</span>
+             docker-common <span class="token punctuation">\</span>
+             docker-latest <span class="token punctuation">\</span>
+             docker-latest-logrotate <span class="token punctuation">\</span>
+             docker-logrotate <span class="token punctuation">\</span>
+             docker-engine	
+</code></pre></div><h2 id="安装依赖库"><a href="#安装依赖库" class="header-anchor">#</a> 安装依赖库</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> yum-utils
+</code></pre></div><h2 id="设置稳定版本的镜像仓库"><a href="#设置稳定版本的镜像仓库" class="header-anchor">#</a> 设置稳定版本的镜像仓库</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre></div><h2 id="更新yum软件包索引"><a href="#更新yum软件包索引" class="header-anchor">#</a> 更新yum软件包索引</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>yum makecache fast
+</code></pre></div><h2 id="安装docker-engine"><a href="#安装docker-engine" class="header-anchor">#</a> 安装Docker Engine</h2> <blockquote><p>Docker CE（Docker Engine - Community 社区免费版本）；Docker EE（企业版，强调安全，但需付费使用）</p></blockquote> <p>我们这边使用社区版本，默认安装的是最新版本</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
+</code></pre></div><p>或者安装指定版本</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum list docker-ce <span class="token parameter variable">--showduplicates</span> <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-r</span>
+已加载插件：fastestmirror
+已安装的软件包
+可安装的软件包
+ * updates: mirrors.ustc.edu.cn
+Loading mirror speeds from cached hostfile
+ * extras: mirrors.bfsu.edu.cn
+docker-ce.x86_64            <span class="token number">3</span>:24.0.2-1.el7                     docker-ce-stable 
+docker-ce.x86_64            <span class="token number">3</span>:24.0.2-1.el7                     @docker-ce-stable
+docker-ce.x86_64            <span class="token number">3</span>:24.0.1-1.el7                     docker-ce-stable 
+docker-ce.x86_64            <span class="token number">3</span>:24.0.0-1.el7                     docker-ce-stable 
+docker-ce.x86_64            <span class="token number">3</span>:23.0.6-1.el7                     docker-ce-stable 
+docker-ce.x86_64            <span class="token number">3</span>:23.0.5-1.el7                     docker-ce-stable 
+docker-ce.x86_64            <span class="token number">3</span>:23.0.4-1.el7                     docker-ce-stable 
+<span class="token punctuation">..</span>.
+
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">sudo</span> yum <span class="token function">install</span> docker-ce-<span class="token operator">&lt;</span>VERSION_STRING<span class="token operator">&gt;</span> docker-ce-cli-<span class="token operator">&lt;</span>VERSION_STRING<span class="token operator">&gt;</span> containerd.io
+</code></pre></div><h2 id="启动docker"><a href="#启动docker" class="header-anchor">#</a> 启动docker</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl start <span class="token function">docker</span>
+</code></pre></div><h2 id="运行hello-world镜像验证是否正确安装了docker-engine"><a href="#运行hello-world镜像验证是否正确安装了docker-engine" class="header-anchor">#</a> 运行hello-world镜像验证是否正确安装了Docker Engine</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost docker<span class="token punctuation">]</span><span class="token comment"># docker run hello-world</span>
+
+Hello from Docker<span class="token operator">!</span>
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ <span class="token number">1</span>. The Docker client contacted the Docker daemon.
+ <span class="token number">2</span>. The Docker daemon pulled the <span class="token string">&quot;hello-world&quot;</span> image from the Docker Hub.
+    <span class="token punctuation">(</span>amd64<span class="token punctuation">)</span>
+ <span class="token number">3</span>. The Docker daemon created a new container from that image <span class="token function">which</span> runs the
+    executable that produces the output you are currently reading.
+ <span class="token number">4</span>. The Docker daemon streamed that output to the Docker client, <span class="token function">which</span> sent it
+    to your terminal.
+
+To try something <span class="token function">more</span> ambitious, you can run an Ubuntu container with:
+ $ <span class="token function">docker</span> run <span class="token parameter variable">-it</span> ubuntu <span class="token function">bash</span>
+
+Share images, automate workflows, and <span class="token function">more</span> with a <span class="token function">free</span> Docker ID:
+ https://hub.docker.com/
+
+For <span class="token function">more</span> examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+</code></pre></div><p>出现如上表示成功运行hello-world</p> <h2 id="配置hub国内镜像"><a href="#配置hub国内镜像" class="header-anchor">#</a> 配置Hub国内镜像</h2> <ol><li>如果拉取镜像失败，需要配置国内的镜像</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vi</span> /etc/docker/daemon.json
+</code></pre></div><ol start="2"><li>配置网易163的hub镜像，也可以配置国内其他镜像，比如阿里云镜像</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">{</span><span class="token string">&quot;registry-mirrors&quot;</span>:<span class="token punctuation">[</span><span class="token string">&quot;http://hub-mirror.c.163.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre></div><ol start="3"><li>重启服务</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl restart <span class="token function">docker</span>
+</code></pre></div><ol start="4"><li>再次执行</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">docker</span> run hello-world
+</code></pre></div><h3 id="配置阿里云镜像"><a href="#配置阿里云镜像" class="header-anchor">#</a> 配置阿里云镜像</h3> <ol><li>打开<a href="https://promotion.aliyun.com/ntms/act/kubernetes.html" target="_blank" rel="noopener noreferrer">注册地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，使用淘宝或者支付宝账号登录</li> <li>选择控制台
+<img src="/assets/img/docker_az01.eb01b39a.jpg" alt=""></li> <li>搜索容器镜像服务
+<img src="/assets/img/docker_az02.c4039220.jpg" alt=""></li> <li>复制镜像地址
+<img src="/assets/img/docker_az03.eed079a8.jpg" alt=""></li> <li>修改daemon.json</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vi</span> /etc/docker/daemon.json
+
+<span class="token punctuation">{</span><span class="token string">&quot;registry-mirrors&quot;</span>:<span class="token punctuation">[</span><span class="token string">&quot;https://xxxx.mirror.aliyuncs.com&quot;</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+</code></pre></div><ol start="6"><li>重启服务</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl daemon-reload
+systemctl restart <span class="token function">docker</span>
+</code></pre></div><ol start="7"><li>测试拉取镜像</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">docker</span> pull tomcat
+</code></pre></div><h2 id="run命令干了哪些事情"><a href="#run命令干了哪些事情" class="header-anchor">#</a> run命令干了哪些事情</h2> <ol><li><p>检查本地是否有hello-world镜像，有则以改镜像为模板创建容器实例运行。</p></li> <li><p>没有则从Docker Hub拉取（默认从国外的Hub拉取，配置了国内镜像则拉取国内Hub镜像），相当于执行命令<code>docker pull hello-world</code>。</p></li> <li><p>将镜像为模板创建容器实例运行，相当于执行命令<code>docker container create</code>。</p></li></ol> <h2 id="卸载"><a href="#卸载" class="header-anchor">#</a> 卸载</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>systemctl stop <span class="token function">docker</span>
+yum remove docker-ce docker-ce-cli containerd.io
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /var/lib/docker
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /var/lib/containerd
+</code></pre></div><h2 id="底层原理"><a href="#底层原理" class="header-anchor">#</a> 底层原理</h2> <p>docker使用Go语言编写，直接使用物理机的硬件资源，并且直接使用宿主机的内核。所以各方面性能都比虚拟机快。虚拟机需要虚拟硬件，在宿主机上虚拟一套系统。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/运维/Docker/Docker入门-架构.html" class="prev">
+        架构
+      </a></span> <span class="next"><a href="/运维/Docker/Docker入门-常用命令.html">
+        常用命令
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.87787286.js" defer></script><script src="/assets/js/2.7474dc9b.js" defer></script><script src="/assets/js/24.39c48b23.js" defer></script>
+  </body>
+</html>

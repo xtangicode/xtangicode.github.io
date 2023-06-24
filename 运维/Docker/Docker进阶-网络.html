@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>docker网络 | Sugar</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="Sugar">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.87787286.js" as="script"><link rel="preload" href="/assets/js/2.7474dc9b.js" as="script"><link rel="preload" href="/assets/js/20.aaebf09b.js" as="script"><link rel="prefetch" href="/assets/js/10.f2c09d91.js"><link rel="prefetch" href="/assets/js/100.31dbbd22.js"><link rel="prefetch" href="/assets/js/11.ab3c80b7.js"><link rel="prefetch" href="/assets/js/12.d63bbe50.js"><link rel="prefetch" href="/assets/js/13.32e6b473.js"><link rel="prefetch" href="/assets/js/14.f5f53505.js"><link rel="prefetch" href="/assets/js/15.7c1473bf.js"><link rel="prefetch" href="/assets/js/16.741dad00.js"><link rel="prefetch" href="/assets/js/17.d1723ba1.js"><link rel="prefetch" href="/assets/js/18.598fa16b.js"><link rel="prefetch" href="/assets/js/19.2872ff11.js"><link rel="prefetch" href="/assets/js/21.6fe37cfb.js"><link rel="prefetch" href="/assets/js/22.e816f1dd.js"><link rel="prefetch" href="/assets/js/23.aa12e97d.js"><link rel="prefetch" href="/assets/js/24.39c48b23.js"><link rel="prefetch" href="/assets/js/25.d0a801eb.js"><link rel="prefetch" href="/assets/js/26.b8858599.js"><link rel="prefetch" href="/assets/js/27.efe7508c.js"><link rel="prefetch" href="/assets/js/28.665889f0.js"><link rel="prefetch" href="/assets/js/29.35ad5d33.js"><link rel="prefetch" href="/assets/js/3.afdd60e2.js"><link rel="prefetch" href="/assets/js/30.5e1a82f7.js"><link rel="prefetch" href="/assets/js/31.b432b24d.js"><link rel="prefetch" href="/assets/js/32.32bc3001.js"><link rel="prefetch" href="/assets/js/33.2d49e809.js"><link rel="prefetch" href="/assets/js/34.4b5f764a.js"><link rel="prefetch" href="/assets/js/35.ceb9d252.js"><link rel="prefetch" href="/assets/js/36.13ae58d4.js"><link rel="prefetch" href="/assets/js/37.a70a7b9c.js"><link rel="prefetch" href="/assets/js/38.0f560cc1.js"><link rel="prefetch" href="/assets/js/39.201caad1.js"><link rel="prefetch" href="/assets/js/4.c5ce5fb4.js"><link rel="prefetch" href="/assets/js/40.b9ab535d.js"><link rel="prefetch" href="/assets/js/41.88216b6f.js"><link rel="prefetch" href="/assets/js/42.0364b286.js"><link rel="prefetch" href="/assets/js/43.f4d17a1d.js"><link rel="prefetch" href="/assets/js/44.04bd056d.js"><link rel="prefetch" href="/assets/js/45.d18bd618.js"><link rel="prefetch" href="/assets/js/46.52048131.js"><link rel="prefetch" href="/assets/js/47.2619df9c.js"><link rel="prefetch" href="/assets/js/48.62293875.js"><link rel="prefetch" href="/assets/js/49.ee8db2f4.js"><link rel="prefetch" href="/assets/js/5.430e5ee0.js"><link rel="prefetch" href="/assets/js/50.46c0678a.js"><link rel="prefetch" href="/assets/js/51.45011951.js"><link rel="prefetch" href="/assets/js/52.bf81a524.js"><link rel="prefetch" href="/assets/js/53.f07d53be.js"><link rel="prefetch" href="/assets/js/54.fb65738f.js"><link rel="prefetch" href="/assets/js/55.3a3c7c03.js"><link rel="prefetch" href="/assets/js/56.9c4d1c26.js"><link rel="prefetch" href="/assets/js/57.e5a70254.js"><link rel="prefetch" href="/assets/js/58.5ef7a38e.js"><link rel="prefetch" href="/assets/js/59.ac55374e.js"><link rel="prefetch" href="/assets/js/6.8bd84f3d.js"><link rel="prefetch" href="/assets/js/60.a9f185d1.js"><link rel="prefetch" href="/assets/js/61.4691b1f0.js"><link rel="prefetch" href="/assets/js/62.19a13ebb.js"><link rel="prefetch" href="/assets/js/63.7ded963b.js"><link rel="prefetch" href="/assets/js/64.ef2ed6fc.js"><link rel="prefetch" href="/assets/js/65.b31da18d.js"><link rel="prefetch" href="/assets/js/66.2486639a.js"><link rel="prefetch" href="/assets/js/67.70fc71c6.js"><link rel="prefetch" href="/assets/js/68.fc5262a5.js"><link rel="prefetch" href="/assets/js/69.92c0bf80.js"><link rel="prefetch" href="/assets/js/7.bb64f78e.js"><link rel="prefetch" href="/assets/js/70.53830da0.js"><link rel="prefetch" href="/assets/js/71.98ac4b82.js"><link rel="prefetch" href="/assets/js/72.953b023e.js"><link rel="prefetch" href="/assets/js/73.7153dfd0.js"><link rel="prefetch" href="/assets/js/74.a69b16c5.js"><link rel="prefetch" href="/assets/js/75.90a10999.js"><link rel="prefetch" href="/assets/js/76.0fb3a421.js"><link rel="prefetch" href="/assets/js/77.d043222c.js"><link rel="prefetch" href="/assets/js/78.d404934c.js"><link rel="prefetch" href="/assets/js/79.fe5693cf.js"><link rel="prefetch" href="/assets/js/8.de2f67b9.js"><link rel="prefetch" href="/assets/js/80.4a11c23e.js"><link rel="prefetch" href="/assets/js/81.be0355cb.js"><link rel="prefetch" href="/assets/js/82.08c9702a.js"><link rel="prefetch" href="/assets/js/83.c314c22c.js"><link rel="prefetch" href="/assets/js/84.e6f1bbcb.js"><link rel="prefetch" href="/assets/js/85.0e39afd3.js"><link rel="prefetch" href="/assets/js/86.c3d611e8.js"><link rel="prefetch" href="/assets/js/87.d5fbf7bd.js"><link rel="prefetch" href="/assets/js/88.f735d6fb.js"><link rel="prefetch" href="/assets/js/89.2e900324.js"><link rel="prefetch" href="/assets/js/9.d7379f7d.js"><link rel="prefetch" href="/assets/js/90.76c03561.js"><link rel="prefetch" href="/assets/js/91.aa36d6e6.js"><link rel="prefetch" href="/assets/js/92.3f1dacf4.js"><link rel="prefetch" href="/assets/js/93.baa00a98.js"><link rel="prefetch" href="/assets/js/94.dac730b5.js"><link rel="prefetch" href="/assets/js/95.abd38298.js"><link rel="prefetch" href="/assets/js/96.fae986f1.js"><link rel="prefetch" href="/assets/js/97.c4aaa517.js"><link rel="prefetch" href="/assets/js/98.7d85573e.js"><link rel="prefetch" href="/assets/js/99.5879968c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sugar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  Flutter
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/流媒体服务.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Nacos
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  OSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Kafka
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  架构
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/JDK安装.html" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/运维/Docker/Docker入门-介绍.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  K8S
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  CI/CD
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  监控
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  日志收集
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Java/" class="nav-link">
+  Java
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  Flutter
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          SQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/数据库/MySQL/MySQL目录结构.html" class="nav-link">
+  MySQL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          NoSQL数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/数据库/ElasticSearch/ES知识体系.html" class="nav-link">
+  ElasticSearch
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MangoDB
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><span class="title">框架</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架" class="mobile-dropdown-title"><span class="title">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          后端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  MyBatis
+</a></li><li class="dropdown-subitem"><a href="/框架/Spring/SpEL&amp;EL表达式.html" class="nav-link">
+  Spring
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringBoot
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  SpringCloud
+</a></li><li class="dropdown-subitem"><a href="/框架/Activiti/Activiti介绍.html" class="nav-link">
+  Activiti
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="中间件" class="dropdown-title"><span class="title">中间件</span> <span class="arrow down"></span></button> <button type="button" aria-label="中间件" class="mobile-dropdown-title"><span class="title">中间件</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          服务器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/中间件/Nginx/流媒体服务.html" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/中间件/Tomcat/" class="nav-link">
+  Tomcat
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Netty
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Nacos
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  OSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          消息队列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  RabbitMQ
+</a></li><li class="dropdown-subitem"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  Kafka
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  架构
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维" class="dropdown-title"><span class="title">运维</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维" class="mobile-dropdown-title"><span class="title">运维</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/运维/Linux/JDK安装.html" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/运维/Docker/Docker入门-介绍.html" class="nav-link">
+  Docker
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  K8S
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  CI/CD
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  监控
+</a></li><li class="dropdown-item"><!----> <a href="/%E8%BF%90%E7%BB%B4/Docker/.html" class="nav-link">
+  日志收集
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Docker入门</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/运维/Docker/Docker入门-介绍.html" class="sidebar-link">介绍</a></li><li><a href="/运维/Docker/Docker入门-架构.html" class="sidebar-link">架构</a></li><li><a href="/运维/Docker/Docker入门-安装.html" class="sidebar-link">安装</a></li><li><a href="/运维/Docker/Docker入门-常用命令.html" class="sidebar-link">常用命令</a></li><li><a href="/运维/Docker/Docker入门-镜像.html" class="sidebar-link">镜像</a></li><li><a href="/运维/Docker/Docker入门-数据卷.html" class="sidebar-link">数据卷</a></li><li><a href="/运维/Docker/Docker入门-相关软件环境安装.html" class="sidebar-link">相关软件环境安装</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Docker进阶</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/运维/Docker/Docker进阶-Dockerfile.html" class="sidebar-link">Dockerfile</a></li><li><a href="/运维/Docker/Docker进阶-网络.html" class="active sidebar-link">网络</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#docker网络" class="sidebar-link">docker网络</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#常用命令" class="sidebar-link">常用命令</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#作用" class="sidebar-link">作用</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#容器默认ip" class="sidebar-link">容器默认IP</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#网络模式" class="sidebar-link">网络模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#bridge模式" class="sidebar-link">bridge模式</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#host模式" class="sidebar-link">host模式</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#none模式" class="sidebar-link">none模式</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#container模式" class="sidebar-link">container模式</a></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#自定义模式" class="sidebar-link">自定义模式</a></li></ul></li><li class="sidebar-sub-header"><a href="/运维/Docker/Docker进阶-网络.html#docker平台架构" class="sidebar-link">Docker平台架构</a></li></ul></li><li><a href="/运维/Docker/Docker进阶-Docker Compose容器编排.html" class="sidebar-link">Docker Compose容器编排</a></li><li><a href="/运维/Docker/Docker进阶-轻量级可视化工具Portainer.html" class="sidebar-link">轻量级可视化工具Portainer</a></li><li><a href="/运维/Docker/Docker进阶-容器监控CAdvisor+InfluxDB+Granfana.html" class="sidebar-link">容器监控CAdvisor+InfluxDB+Granfana</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="docker网络"><a href="#docker网络" class="header-anchor">#</a> docker网络</h2> <p>docker不启动时，网络情况、ens33、lo、virbr0</p> <p>docker启动后</p> <div class="language-shell extra-class"><pre class="language-shell"><code>NETWORK ID     NAME      DRIVER    SCOPE
+6e6cb2997916   bridge    bridge    <span class="token builtin class-name">local</span>
+28dfd6a944d1   <span class="token function">host</span>      <span class="token function">host</span>      <span class="token builtin class-name">local</span>
+7be6849a2d1f   none      null      <span class="token builtin class-name">local</span>
+</code></pre></div><h2 id="常用命令"><a href="#常用命令" class="header-anchor">#</a> 常用命令</h2> <p>docker network 参数</p> <ul><li><p>connect     Connect a container to a network</p></li> <li><p>create     创建网络，<code>docker network create 网络名字</code></p></li> <li><p>disconnect  Disconnect a container from a network</p></li> <li><p>inspect  查看网络详细信息，<code>docker network inspect 网络名字</code></p></li> <li><p>ls          查看网络列表 <code>docker network ls</code></p></li> <li><p>prune       删除所有没用的网络</p></li> <li><p>rm        删除一个或多个网络  <code>docker network rm 网络名字</code></p></li></ul> <h2 id="作用"><a href="#作用" class="header-anchor">#</a> 作用</h2> <p>容器之间互联和通信以及端口映射，容器IP变动时，可以通过服务吗直接网络通信不受影响。</p> <h2 id="容器默认ip"><a href="#容器默认ip" class="header-anchor">#</a> 容器默认IP</h2> <p>容器内默认IP是有可能发生变化的</p> <p>具体演示如下</p> <ol><li>先启动centos容器c1、查看其网络ip为<code>172.17.0.2</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it --name c1 centos /bin/bash</span>
+<span class="token comment"># ctrl+q+p 退出c1</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker ps -a|grep Up</span>
+97775b5ffd9b   centos                  <span class="token string">&quot;/bin/bash&quot;</span>               <span class="token number">22</span> seconds ago   Up <span class="token number">20</span> seconds                                                              c1
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker inspect 97775b5ffd9b</span>
+
+<span class="token punctuation">..</span>.
+     <span class="token string">&quot;NetworkSettings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;Bridge&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;SandboxID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;3a795d9882fe0d65fa7d64366729dabcbf7ac4c9017f23d6e9ca9e2594ebdc98&quot;</span>,
+            <span class="token string">&quot;HairpinMode&quot;</span><span class="token builtin class-name">:</span> false,
+            <span class="token string">&quot;LinkLocalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;LinkLocalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;Ports&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+            <span class="token string">&quot;SandboxKey&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;/var/run/docker/netns/3a795d9882fe&quot;</span>,
+            <span class="token string">&quot;SecondaryIPAddresses&quot;</span><span class="token builtin class-name">:</span> null,
+            <span class="token string">&quot;SecondaryIPv6Addresses&quot;</span><span class="token builtin class-name">:</span> null,
+            <span class="token string">&quot;EndpointID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;0253b327ff7154155c385db877e2adc46a222119630d81881a79658a8503bf23&quot;</span>,
+            <span class="token string">&quot;Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.1&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;IPAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.2&quot;</span>,
+            <span class="token string">&quot;IPPrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">16</span>,
+            <span class="token string">&quot;IPv6Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;MacAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;02:42:ac:11:00:02&quot;</span>,
+<span class="token punctuation">..</span>.
+</code></pre></div><ol start="2"><li>再启动centos容器c2、查看其网络ip为<code>172.17.0.3</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it --name c2 centos /bin/bash</span>
+<span class="token comment"># ctrl+q+p 退出c2</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker ps -a|grep Up</span>
+e03e711d40c3   centos                  <span class="token string">&quot;/bin/bash&quot;</span>               <span class="token number">10</span> seconds ago   Up <span class="token number">9</span> seconds                                                               c2
+97775b5ffd9b   centos                  <span class="token string">&quot;/bin/bash&quot;</span>               <span class="token number">58</span> seconds ago   Up <span class="token number">56</span> seconds                                                              c1
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker inspect e03e711d40c3</span>
+
+<span class="token punctuation">..</span>.
+     <span class="token string">&quot;NetworkSettings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;Bridge&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;SandboxID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;41b4d43bfe686821f5e98400aa36f0156450ce2424bd22a57bdaff38220d703d&quot;</span>,
+            <span class="token string">&quot;HairpinMode&quot;</span><span class="token builtin class-name">:</span> false,
+            <span class="token string">&quot;LinkLocalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;LinkLocalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;Ports&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+            <span class="token string">&quot;SandboxKey&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;/var/run/docker/netns/41b4d43bfe68&quot;</span>,
+            <span class="token string">&quot;SecondaryIPAddresses&quot;</span><span class="token builtin class-name">:</span> null,
+            <span class="token string">&quot;SecondaryIPv6Addresses&quot;</span><span class="token builtin class-name">:</span> null,
+            <span class="token string">&quot;EndpointID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;9881d6042f12af8de42e707d7ebf631061ea0ad021677830f9218759548675a0&quot;</span>,
+            <span class="token string">&quot;Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.1&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;IPAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.3&quot;</span>,
+            <span class="token string">&quot;IPPrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">16</span>,
+            <span class="token string">&quot;IPv6Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;MacAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;02:42:ac:11:00:03&quot;</span>,
+<span class="token punctuation">..</span>.
+
+</code></pre></div><ol start="3"><li>关闭容器c2，启动容器c3，查看容器c3的网络ip为<code>172.17.0.3</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker stop e03e711d40c3</span>
+e03e711d40c3
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it --name c3 centos /bin/bash</span>
+<span class="token comment"># ctrl+q+p 退出c3</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker ps -a | grep Up</span>
+216eb9315fe4   centos                  <span class="token string">&quot;/bin/bash&quot;</span>               <span class="token number">22</span> seconds ago       Up <span class="token number">21</span> seconds                                                               c3
+97775b5ffd9b   centos                  <span class="token string">&quot;/bin/bash&quot;</span>               <span class="token number">2</span> minutes ago        Up <span class="token number">2</span> minutes                                                                c1
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker inspect 216eb9315fe4</span>
+
+<span class="token punctuation">..</span>.
+       <span class="token string">&quot;NetworkSettings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;Bridge&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;SandboxID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;7d3d615c60a33250ee3109b0ac31730e05d3f9a9a2825afdbfa494ad15be70de&quot;</span>,
+            <span class="token string">&quot;HairpinMode&quot;</span><span class="token builtin class-name">:</span> false,
+            <span class="token string">&quot;LinkLocalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;LinkLocalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;Ports&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+            <span class="token string">&quot;SandboxKey&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;/var/run/docker/netns/7d3d615c60a3&quot;</span>,
+            <span class="token string">&quot;SecondaryIPAddresses&quot;</span><span class="token builtin class-name">:</span> null,
+            <span class="token string">&quot;SecondaryIPv6Addresses&quot;</span><span class="token builtin class-name">:</span> null,
+            <span class="token string">&quot;EndpointID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;066fe3b713ea5675a11c7734cf5ebe0a46e7cec46b6c1d08740a097cdf835c5d&quot;</span>,
+            <span class="token string">&quot;Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.1&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;IPAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;172.17.0.3&quot;</span>,
+            <span class="token string">&quot;IPPrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">16</span>,
+            <span class="token string">&quot;IPv6Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;MacAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;02:42:ac:11:00:03&quot;</span>,
+<span class="token punctuation">..</span>.
+</code></pre></div><h2 id="网络模式"><a href="#网络模式" class="header-anchor">#</a> 网络模式</h2> <p><strong>五种模式</strong></p> <ul><li>bridge模式：使用<code>--network bridge</code>指定，默认使用docker0</li> <li>host模式：使用<code>--network host</code>指定</li> <li>none模式：使用<code>--network none</code>指定</li> <li>container模式：使用<code>--network container:容器名称或者容器ID</code>指定</li> <li>自定义模式</li></ul> <h3 id="bridge模式"><a href="#bridge模式" class="header-anchor">#</a> bridge模式</h3> <p>Docker 服务默认会创建一个 docker0 网桥（其上有一个 docker0 内部接口），该桥接网络的名称为docker0，它在内核层连通了其他的物理或虚拟网卡，这就将所有容器和本地主机都放到同一个物理网络。Docker 默认指定了 docker0 接口 的 IP 地址和子网掩码，让主机和容器之间可以通过网桥相互通信。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ifconfig</span>
+docker0: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">409</span><span class="token operator"><span class="token file-descriptor important">9</span>&lt;</span>UP,BROADCAST,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1500</span>
+        inet <span class="token number">172.17</span>.0.1  netmask <span class="token number">255.255</span>.0.0  broadcast <span class="token number">172.17</span>.255.255
+        inet6 fe80::42:15ff:fea5:e7f6  prefixlen <span class="token number">64</span>  scopeid 0x2<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>link<span class="token operator">&gt;</span>
+        ether 02:42:15:a5:e7:f6  txqueuelen <span class="token number">0</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">0</span>  bytes <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0.0</span> B<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">5</span>  bytes <span class="token number">438</span> <span class="token punctuation">(</span><span class="token number">438.0</span> B<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+ens33: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">416</span><span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>UP,BROADCAST,RUNNING,MULTICAST<span class="token operator">&gt;</span>  mtu <span class="token number">1500</span>
+        inet <span class="token number">192.168</span>.133.129  netmask <span class="token number">255.255</span>.255.0  broadcast <span class="token number">192.168</span>.133.255
+        inet6 fe80::30b7:394c:ee8d:6dbb  prefixlen <span class="token number">64</span>  scopeid 0x2<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>link<span class="token operator">&gt;</span>
+        ether 00:0c:29:78:1c:9a  txqueuelen <span class="token number">1000</span>  <span class="token punctuation">(</span>Ethernet<span class="token punctuation">)</span>
+        RX packets <span class="token number">4129</span>  bytes <span class="token number">291091</span> <span class="token punctuation">(</span><span class="token number">284.2</span> KiB<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">1795</span>  bytes <span class="token number">198275</span> <span class="token punctuation">(</span><span class="token number">193.6</span> KiB<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+
+lo: <span class="token assign-left variable">flags</span><span class="token operator">=</span><span class="token number">7</span><span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>UP,LOOPBACK,RUNNING<span class="token operator">&gt;</span>  mtu <span class="token number">65536</span>
+        inet <span class="token number">127.0</span>.0.1  netmask <span class="token number">255.0</span>.0.0
+        inet6 ::1  prefixlen <span class="token number">128</span>  scopeid 0x1<span class="token operator"><span class="token file-descriptor important">0</span>&lt;</span>host<span class="token operator">&gt;</span>
+        loop  txqueuelen <span class="token number">1</span>  <span class="token punctuation">(</span>Local Loopback<span class="token punctuation">)</span>
+        RX packets <span class="token number">16</span>  bytes <span class="token number">1408</span> <span class="token punctuation">(</span><span class="token number">1.3</span> KiB<span class="token punctuation">)</span>
+        RX errors <span class="token number">0</span>  dropped <span class="token number">0</span>  overruns <span class="token number">0</span>  frame <span class="token number">0</span>
+        TX packets <span class="token number">16</span>  bytes <span class="token number">1408</span> <span class="token punctuation">(</span><span class="token number">1.3</span> KiB<span class="token punctuation">)</span>
+        TX errors <span class="token number">0</span>  dropped <span class="token number">0</span> overruns <span class="token number">0</span>  carrier <span class="token number">0</span>  collisions <span class="token number">0</span>
+</code></pre></div><p>查看 bridge 网络的详细信息，并通过 grep 获取名称项，使用的是docker0</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker network inspect bridge | grep name</span>
+            <span class="token string">&quot;com.docker.network.bridge.name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;docker0&quot;</span>,
+</code></pre></div><p><strong>结论</strong></p> <ul><li><p>Docker使用Linux桥接，在宿主机虚拟一个Docker容器网桥(docker0)，Docker启动一个容器时会根据Docker网桥的网段分配给容器一个IP地址，称为Container-IP，同时Docker网桥是每个容器的默认网关。因为在同一宿主机内的容器都接入同一个网桥，这样容器之间就能够通过容器的Container-IP直接通信。</p></li> <li><p>docker run 的时候，没有指定network的话默认使用的网桥模式就是bridge，使用的就是docker0。在宿主机ifconfig,就可以看到docker0和自己create的network(后面讲)eth0，eth1，eth2……代表网卡一，网卡二，网卡三……，lo代表127.0.0.1，即localhost，inet addr用来表示网卡的IP地址</p></li> <li><p>网桥docker0创建一对对等虚拟设备接口一个叫veth，另一个叫eth0，成对匹配。</p> <ul><li>整个宿主机的网桥模式都是docker0，类似一个交换机有一堆接口，每个接口叫veth，在本地主机和容器内分别创建一个虚拟接口，并让他们彼此联通（这样一对接口叫veth pair）；</li> <li>每个容器实例内部也有一块网卡，每个接口叫eth0；</li> <li>docker0上面的每个veth匹配某个容器实例内部的eth0，两两配对，一一匹配。</li></ul></li></ul> <p>通过上述，将宿主机上的所有容器都连接到这个内部网络上，两个容器在同一个网络下,会从这个网关下各自拿到分配的ip，此时两个容器的网络是互通的。</p> <p><img src="/assets/img/docker_wl01.481e9cd3.jpg" alt=""></p> <p><strong>案例</strong></p> <ol><li>启动tomcat容器实例tomcat81、tomcat82</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8081:8080 --name tomcat81 billygoo/tomcat8-jdk8</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8082:8080 --name tomcat82 billygoo/tomcat8-jdk8</span>
+</code></pre></div><ol start="2"><li>宿主机运行<code>ip addr</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope <span class="token function">host</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span>: ens33: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP qlen <span class="token number">1000</span>
+    link/ether 00:0c:29:78:1c:9a brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">192.168</span>.133.129/24 brd <span class="token number">192.168</span>.133.255 scope global ens33
+       valid_lft forever preferred_lft forever
+    inet6 fe80::30b7:394c:ee8d:6dbb/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">3</span>: docker0: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP 
+    link/ether 02:42:ca:f9:58:c7 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">172.17</span>.0.1/16 brd <span class="token number">172.17</span>.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:caff:fef9:58c7/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">5</span>: veth34d86ea@if4: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue master docker0 state UP 
+    link/ether ee:19:2d:8c:81:a6 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet6 fe80::ec19:2dff:fe8c:81a6/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">7</span>: veth45eb057@if6: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue master docker0 state UP 
+    link/ether c6:3a:17:c6:ce:ec brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">1</span>
+    inet6 fe80::c43a:17ff:fec6:ceec/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="3"><li>进入tomcat81运行<code>ip addr</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat81 /bin/bash</span>
+root@98d743959618:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">4</span>: eth0@if5: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.17</span>.0.2/16 brd <span class="token number">172.17</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="4"><li>进入tomcat82运行<code>ip addr</code></li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat82 /bin/bash</span>
+root@a2f1ea124d4c:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">6</span>: eth0@if7: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.17</span>.0.3/16 brd <span class="token number">172.17</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="5"><li>得出结论，容器中eth0和docker0上的veth是一一对应的。</li></ol> <h3 id="host模式"><a href="#host模式" class="header-anchor">#</a> host模式</h3> <p>直接使用宿主机的 IP 地址与外界进行通信，不再需要额外进行NAT 转换。</p> <p>容器将不会获得一个独立的Network Namespace， 而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡而是使用宿主机的IP和端口。</p> <p><img src="/assets/img/docker_wl02.ecfbb220.jpg" alt=""></p> <p><strong>案例</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8083:8080 --network host --name tomcat83 billygoo/tomcat8-jdk8</span>
+WARNING: Published ports are discarded when using <span class="token function">host</span> network mode
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># curl -X GET &quot;localhost:8083&quot;</span>
+curl: <span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span> Failed connect to localhost:8083<span class="token punctuation">;</span> 拒绝连接
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># curl -X GET &quot;localhost:8080&quot;</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>html <span class="token assign-left variable">lang</span><span class="token operator">=</span><span class="token string">&quot;en&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>meta <span class="token assign-left variable">charset</span><span class="token operator">=</span><span class="token string">&quot;UTF-8&quot;</span> /<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>Apache Tomcat/8.0.5<span class="token operator"><span class="token file-descriptor important">3</span>&lt;</span>/title<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>link <span class="token assign-left variable">href</span><span class="token operator">=</span><span class="token string">&quot;favicon.ico&quot;</span> <span class="token assign-left variable">rel</span><span class="token operator">=</span><span class="token string">&quot;icon&quot;</span> <span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">&quot;image/x-icon&quot;</span> /<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>link <span class="token assign-left variable">href</span><span class="token operator">=</span><span class="token string">&quot;favicon.ico&quot;</span> <span class="token assign-left variable">rel</span><span class="token operator">=</span><span class="token string">&quot;shortcut icon&quot;</span> <span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">&quot;image/x-icon&quot;</span> /<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>link <span class="token assign-left variable">href</span><span class="token operator">=</span><span class="token string">&quot;tomcat.css&quot;</span> <span class="token assign-left variable">rel</span><span class="token operator">=</span><span class="token string">&quot;stylesheet&quot;</span> <span class="token assign-left variable">type</span><span class="token operator">=</span><span class="token string">&quot;text/css&quot;</span> /<span class="token operator">&gt;</span>
+<span class="token punctuation">..</span>.
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">注意</p> <p>问题：docke启动时总是遇见标题中的警告</p> <p>原因： docker启动时指定--network=host或-net=host，如果还指定了-p映射端口，那这个时候就会有此警告，并且通过-p设置的参数将不会起到任何作用，端口号会以容器端口号为主，重复时则递增。</p> <p>解决：解决的办法就是使用docker的其他网络模式，例如--network=bridge，这样就可以解决问题，或者直接无视。</p> <p>正确写法：docker run -d --network host --name tomcat83 billygoo/tomcat8-jdk8</p></div> <p><strong>查看ip</strong>
+进入容器内部发现查看ip发现使用的是宿主机的网卡ip，192.168.133.129</p> <div class="language-shell extra-class"><pre class="language-shell"><code>root@localhost:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope <span class="token function">host</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span>: ens33: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP group default qlen <span class="token number">1000</span>
+    link/ether 00:0c:29:78:1c:9a brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">192.168</span>.133.129/24 brd <span class="token number">192.168</span>.133.255 scope global ens33
+       valid_lft forever preferred_lft forever
+    inet6 fe80::30b7:394c:ee8d:6dbb/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">3</span>: docker0: <span class="token operator">&lt;</span>NO-CARRIER,BROADCAST,MULTICAST,UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state DOWN group default 
+    link/ether 02:42:ca:f9:58:c7 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">172.17</span>.0.1/16 brd <span class="token number">172.17</span>.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:caff:fef9:58c7/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code>root@localhost:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope <span class="token function">host</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">2</span>: ens33: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc pfifo_fast state UP group default qlen <span class="token number">1000</span>
+    link/ether 00:0c:29:78:1c:9a brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">192.168</span>.133.129/24 brd <span class="token number">192.168</span>.133.255 scope global ens33
+       valid_lft forever preferred_lft forever
+    inet6 fe80::30b7:394c:ee8d:6dbb/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+<span class="token number">3</span>: docker0: <span class="token operator">&lt;</span>NO-CARRIER,BROADCAST,MULTICAST,UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state DOWN group default 
+    link/ether 02:42:ca:f9:58:c7 brd ff:ff:ff:ff:ff:ff
+    inet <span class="token number">172.17</span>.0.1/16 brd <span class="token number">172.17</span>.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:caff:fef9:58c7/64 scope <span class="token function">link</span> 
+       valid_lft forever preferred_lft forever
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker inspect tomcat82</span>
+<span class="token punctuation">..</span>.
+ <span class="token string">&quot;Networks&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;host&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                    <span class="token string">&quot;IPAMConfig&quot;</span><span class="token builtin class-name">:</span> null,
+                    <span class="token string">&quot;Links&quot;</span><span class="token builtin class-name">:</span> null,
+                    <span class="token string">&quot;Aliases&quot;</span><span class="token builtin class-name">:</span> null,
+                    <span class="token string">&quot;NetworkID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;28dfd6a944d1fbf84e3cd66c8fa2a8ba6f51f34b09fa73540d1145782e28bd40&quot;</span>,
+                    <span class="token string">&quot;EndpointID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;42d611b85b3f6a1aaa447b5e624c9eec6b737494aaac8311fd073affbab16be5&quot;</span>,
+                    <span class="token string">&quot;Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;IPAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;IPPrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+                    <span class="token string">&quot;IPv6Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;GlobalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;GlobalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+                    <span class="token string">&quot;MacAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;DriverOpts&quot;</span><span class="token builtin class-name">:</span> null
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+<span class="token punctuation">..</span>.
+</code></pre></div><p><strong>好处</strong></p> <p>外部主机直接访问到容器内部，通过访问宿主机ip:容器端口号，就能访问容器。</p> <h3 id="none模式"><a href="#none模式" class="header-anchor">#</a> none模式</h3> <p>在none模式下，并不为Docker容器进行任何网络配置。也就是说，这个Docker容器没有网卡、IP、路由等信息，只有一个lo需要我们自己为Docker容器添加网卡、配置IP等。</p> <p><strong>案例</strong></p> <p>使用none模式启动tomcat容器实例tomcat84</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8084:8080 --name tomcat84 --network none billygoo/tomcat8-jdk8</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat84 /bin/bash</span>
+root@59ad86b6620b:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+       
+root@59ad86b6620b:/usr/local/tomcat<span class="token comment"># exit</span>
+<span class="token builtin class-name">exit</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker inspect tomcat84</span>
+<span class="token punctuation">..</span>.
+   <span class="token string">&quot;Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;GlobalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;IPAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;IPPrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+            <span class="token string">&quot;IPv6Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;MacAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+            <span class="token string">&quot;Networks&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;none&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                    <span class="token string">&quot;IPAMConfig&quot;</span><span class="token builtin class-name">:</span> null,
+                    <span class="token string">&quot;Links&quot;</span><span class="token builtin class-name">:</span> null,
+                    <span class="token string">&quot;Aliases&quot;</span><span class="token builtin class-name">:</span> null,
+                    <span class="token string">&quot;NetworkID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;7be6849a2d1f47c75a4886c7b08917888a15e47584eac3f83215bc0bb9ea8609&quot;</span>,
+                    <span class="token string">&quot;EndpointID&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;e5f0467c388deb0f9f9b1b784a7b0b7f858b19dbbee692dae6b9448a70b0953d&quot;</span>,
+                    <span class="token string">&quot;Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;IPAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;IPPrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+                    <span class="token string">&quot;IPv6Gateway&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;GlobalIPv6Address&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;GlobalIPv6PrefixLen&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+                    <span class="token string">&quot;MacAddress&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&quot;</span>,
+                    <span class="token string">&quot;DriverOpts&quot;</span><span class="token builtin class-name">:</span> null
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+<span class="token punctuation">..</span>.
+</code></pre></div><h3 id="container模式"><a href="#container模式" class="header-anchor">#</a> container模式</h3> <p>新建的容器和已经存在的一个容器共享一个网络ip配置而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。同样，两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。</p> <p><img src="/assets/img/docker_wl03.0ec14802.jpg" alt=""></p> <p><strong>案例1</strong></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8085:8080 --name tomcat85 billygoo/tomcat8-jdk8</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8086:8080 --name tomcat86 --network container:tomcat85 billygoo/tomcat8-jdk8</span>
+docker: Error response from daemon: conflicting options: port publishing and the container <span class="token builtin class-name">type</span> network mode.
+See <span class="token string">'docker run --help'</span><span class="token builtin class-name">.</span>
+</code></pre></div><p>报错：相当于tomcat86和tomcat85公用同一个ip同一个端口，导致端口冲突，本案例用tomcat演示不合适。</p> <p><strong>案例2</strong></p> <ol><li>启动centos容器实例c1，并且查看ip</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it --name c1 centos /bin/bash</span>
+<span class="token punctuation">[</span>root@893339de554c /<span class="token punctuation">]</span><span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">14</span>: eth0@if15: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.17</span>.0.3/16 brd <span class="token number">172.17</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="2"><li>使用container模式启动centos容器实例c2，并且查看ip，ip和c1一致</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it --name c2 --network container:c1 centos /bin/bash</span>
+<span class="token punctuation">[</span>root@893339de554c /<span class="token punctuation">]</span><span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">14</span>: eth0@if15: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.17</span>.0.3/16 brd <span class="token number">172.17</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="3"><li>关闭容器c1，查看c2的ip，发现其ip也没有了。</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker stop c1</span>
+c1
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it c2 /bin/bash</span>
+<span class="token punctuation">[</span>root@893339de554c /<span class="token punctuation">]</span><span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+</code></pre></div><h3 id="自定义模式"><a href="#自定义模式" class="header-anchor">#</a> 自定义模式</h3> <p><strong>案例</strong></p> <ol><li>启动使用bridge模式启动tomcat容器实例tomcat81、tomcat82</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8081:8080 --name tomcat81 billygoo/tomcat8-jdk8</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -d -p 8082:8080 --name tomcat81 billygoo/tomcat8-jdk8</span>
+</code></pre></div><ol start="2"><li>分别查看tomcat81、tomcat82的ip</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat81 /bin/bash</span>
+root@5e1b7e7f926b:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">16</span>: eth0@if17: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.17</span>.0.2/16 brd <span class="token number">172.17</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+root@5e1b7e7f926b:/usr/local/tomcat<span class="token comment"># exit</span>
+<span class="token builtin class-name">exit</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat82 /bin/bash</span>
+root@232c99d0093a:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">18</span>: eth0@if19: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.17</span>.0.3/16 brd <span class="token number">172.17</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="3"><li>tomcat81、tomcat82互相ping</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>
+<span class="token comment"># tomcat82 ping tomcat81的ip</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat82 /bin/bash</span>
+root@232c99d0093a:/usr/local/tomcat<span class="token comment"># ping 172.17.0.2</span>
+PING <span class="token number">172.17</span>.0.2 <span class="token punctuation">(</span><span class="token number">172.17</span>.0.2<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from <span class="token number">172.17</span>.0.2: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.092</span> ms
+<span class="token number">64</span> bytes from <span class="token number">172.17</span>.0.2: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.039</span> ms
+<span class="token punctuation">..</span>.
+
+<span class="token comment"># tomcat81 ping tomcat82的ip</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat81 /bin/bash</span>
+root@5e1b7e7f926b:/usr/local/tomcat<span class="token comment"># ping 172.17.0.3</span>
+PING <span class="token number">172.17</span>.0.3 <span class="token punctuation">(</span><span class="token number">172.17</span>.0.3<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from <span class="token number">172.17</span>.0.3: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.094</span> ms
+<span class="token number">64</span> bytes from <span class="token number">172.17</span>.0.3: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.057</span> ms
+<span class="token punctuation">..</span>.
+</code></pre></div><ol start="4"><li>tomcat81、tomcat82服务名互相ping</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># tomcat81 ping tomcat82服务名</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat81 /bin/bash</span>
+root@5e1b7e7f926b:/usr/local/tomcat<span class="token comment"># ping tomcat81</span>
+ping: tomcat81: Name or <span class="token function">service</span> not known
+<span class="token comment"># tomcat82 ping tomcat81服务名</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat82 /bin/bash</span>
+root@232c99d0093a:/usr/local/tomcat<span class="token comment"># ping tomcat81</span>
+ping: tomcat81: Name or <span class="token function">service</span> not known
+</code></pre></div><p>通过上面案例发现，ip是可以ping通，但是服务名不可以，但是ip一旦修改之后，容器间就无法进行通信了。所以我们需要使用自定义桥接网络。</p> <h4 id="自定义桥接网络"><a href="#自定义桥接网络" class="header-anchor">#</a> 自定义桥接网络</h4> <p>默认使用的是桥接网络bridge</p> <p><strong>案例</strong></p> <ol><li>新建自定义网络 sugar</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker network create sugar</span>
+2b58eb42aa5785a35b03a66b3265b1dfccfcfe1832711cf81755e782bce29444
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker network ls</span>
+NETWORK ID     NAME      DRIVER    SCOPE
+c854c7a31f9f   bridge    bridge    <span class="token builtin class-name">local</span>
+28dfd6a944d1   <span class="token function">host</span>      <span class="token function">host</span>      <span class="token builtin class-name">local</span>
+7be6849a2d1f   none      null      <span class="token builtin class-name">local</span>
+2b58eb42aa57   sugar     bridge    <span class="token builtin class-name">local</span>
+</code></pre></div><ol start="2"><li>分别使用自定义桥接网络sugar，创建tomcat实例tomcat81、tomcat82</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it -p 8081:8080 --name tomcat81 --network sugar billygoo/tomcat8-jdk8 /bin/bash</span>
+root@9db39e105f36:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">23</span>: eth0@if24: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:12:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.18</span>.0.2/16 brd <span class="token number">172.18</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker run -it -p 8082:8080 --name tomcat82 --network sugar billygoo/tomcat8-jdk8 /bin/bash</span>
+root@18fce11d82d0:/usr/local/tomcat<span class="token comment"># ip addr</span>
+<span class="token number">1</span>: lo: <span class="token operator">&lt;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="token number">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet <span class="token number">127.0</span>.0.1/8 scope <span class="token function">host</span> lo
+       valid_lft forever preferred_lft forever
+<span class="token number">27</span>: eth0@if28: <span class="token operator">&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">&gt;</span> mtu <span class="token number">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:12:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="token number">0</span>
+    inet <span class="token number">172.18</span>.0.3/16 brd <span class="token number">172.18</span>.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+</code></pre></div><ol start="3"><li>tomcat81、tomcat82使用ip互相ping</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>tomcat81 <span class="token function">ping</span> tomcat82的ip
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat81 /bin/bash</span>
+root@9db39e105f36:/usr/local/tomcat<span class="token comment"># ping 172.18.0.3</span>
+PING <span class="token number">172.18</span>.0.3 <span class="token punctuation">(</span><span class="token number">172.18</span>.0.3<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from <span class="token number">172.18</span>.0.3: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.134</span> ms
+<span class="token number">64</span> bytes from <span class="token number">172.18</span>.0.3: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.079</span> ms
+<span class="token number">64</span> bytes from <span class="token number">172.18</span>.0.3: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.072</span> ms
+<span class="token punctuation">..</span>.
+
+tomcat82 <span class="token function">ping</span> tomcat81的ip
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat82 /bin/bash</span>
+root@1ad2d132ec14:/usr/local/tomcat<span class="token comment"># ping 172.18.0.2</span>
+PING <span class="token number">172.18</span>.0.2 <span class="token punctuation">(</span><span class="token number">172.18</span>.0.2<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from <span class="token number">172.18</span>.0.2: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.088</span> ms
+<span class="token number">64</span> bytes from <span class="token number">172.18</span>.0.2: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.038</span> ms
+<span class="token number">64</span> bytes from <span class="token number">172.18</span>.0.2: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.039</span> ms
+
+</code></pre></div><ol start="4"><li>tomcat81、tomcat82使用服务名互相ping</li></ol> <div class="language-shell extra-class"><pre class="language-shell"><code>tomcat81 <span class="token function">ping</span> tomcat82的服务名
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat81 /bin/bash</span>
+root@9db39e105f36:/usr/local/tomcat<span class="token comment"># ping tomcat82</span>
+PING tomcat82 <span class="token punctuation">(</span><span class="token number">172.18</span>.0.3<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from tomcat82.sugar <span class="token punctuation">(</span><span class="token number">172.18</span>.0.3<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.084</span> ms
+<span class="token number">64</span> bytes from tomcat82.sugar <span class="token punctuation">(</span><span class="token number">172.18</span>.0.3<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.040</span> ms
+<span class="token punctuation">..</span>.
+
+tomcat82 <span class="token function">ping</span> tomcat81的服务名
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># docker exec -it tomcat82 /bin/bash</span>
+root@1ad2d132ec14:/usr/local/tomcat<span class="token comment"># ping tomcat81</span>
+PING tomcat81 <span class="token punctuation">(</span><span class="token number">172.18</span>.0.2<span class="token punctuation">)</span> <span class="token number">56</span><span class="token punctuation">(</span><span class="token number">84</span><span class="token punctuation">)</span> bytes of data.
+<span class="token number">64</span> bytes from tomcat81.sugar <span class="token punctuation">(</span><span class="token number">172.18</span>.0.2<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">1</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.047</span> ms
+<span class="token number">64</span> bytes from tomcat81.sugar <span class="token punctuation">(</span><span class="token number">172.18</span>.0.2<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.038</span> ms
+<span class="token number">64</span> bytes from tomcat81.sugar <span class="token punctuation">(</span><span class="token number">172.18</span>.0.2<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.041</span> ms
+<span class="token number">64</span> bytes from tomcat81.sugar <span class="token punctuation">(</span><span class="token number">172.18</span>.0.2<span class="token punctuation">)</span>: <span class="token assign-left variable">icmp_seq</span><span class="token operator">=</span><span class="token number">4</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">64</span> <span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token number">0.038</span> ms
+<span class="token punctuation">..</span>.
+</code></pre></div><p><strong>结论</strong></p> <p>通过上面案例，发现自定义桥接网络可以让容器间通过服务名互相访问，通过服务名访问也解决了ip发生变化后无法访问的问题。</p> <h2 id="docker平台架构"><a href="#docker平台架构" class="header-anchor">#</a> Docker平台架构</h2> <p>从其架构和运行流程来看，Docker 是一个 C/S 模式的架构，后端是一个松耦合架构，众多模块各司其职。</p> <p>Docker 运行的基本流程为：</p> <ol><li><p>用户是使用 Docker Client 与 Docker Daemon 建立通信，并发送请求给后者。</p></li> <li><p>Docker Daemon 作为 Docker 架构中的主体部分，首先提供 Docker Server 的功能使其可以接受 Docker Client 的请求。</p></li> <li><p>Docker Engine 执行 Docker 内部的一系列工作，每一项工作都是以一个 Job 的形式的存在。</p></li> <li><p>Job 的运行过程中，当需要容器镜像时，则从 Docker Registry 中下载镜像，并通过镜像管理驱动 Graph driver将下载镜像以Graph的形式存储。</p></li> <li><p>当需要为 Docker 创建网络环境时，通过网络管理驱动 Network driver 创建并配置 Docker 容器网络环境。</p></li> <li><p>当需要限制 Docker 容器运行资源或执行用户指令等操作时，则通过 Execdriver 来完成。</p></li> <li><p>Libcontainer是一项独立的容器管理包，Network driver以及Exec driver都是通过Libcontainer来实现具体对容器进行的操作。</p></li></ol> <p><img src="/assets/img/docker_wl04.7014ac59.jpg" alt=""></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/运维/Docker/Docker进阶-Dockerfile.html" class="prev">
+        Dockerfile
+      </a></span> <span class="next"><a href="/运维/Docker/Docker进阶-Docker Compose容器编排.html">
+        Docker Compose容器编排
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.87787286.js" defer></script><script src="/assets/js/2.7474dc9b.js" defer></script><script src="/assets/js/20.aaebf09b.js" defer></script>
+  </body>
+</html>
